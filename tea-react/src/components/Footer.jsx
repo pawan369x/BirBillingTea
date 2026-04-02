@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 border-b border-white/5 pb-24">
           <div className="lg:col-span-5">
-            <h2 className="text-5xl font-heading leading-tight uppercase mb-10">The Bir <br /> <span className="text-accent italic">Cooperative</span></h2>
+            <h2 className="text-5xl font-heading leading-tight uppercase mb-10">Bir Billing <br /> <span className="text-accent italic">Tea.</span></h2>
             <p className="text-white/40 max-w-sm mb-10 text-sm leading-relaxed">Preserving the 100-year legacy of Kangra Tea. Supporting local farmers of Himachal Pradesh.</p>
             <div className="flex gap-5">
               {[Instagram, Facebook, Twitter, Mail].map((Icon, i) => (

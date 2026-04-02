@@ -46,10 +46,10 @@ const Navbar = () => {
             >
               <div className="font-heading text-xl md:text-3xl uppercase tracking-[0.05em] transition-all duration-500 flex flex-col items-start leading-[0.9] group-hover:opacity-80">
                 <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_rgba(255,255,255,0.5)]">
-                  HIMALAYAN
+                  BIR BILLING
                 </span>
                 <span className="text-text-light">
-                  PURITY.
+                  TEA.
                 </span>
               </div>
               <motion.div

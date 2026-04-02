@@ -55,8 +55,8 @@ const Home = () => {
             </div>
 
             <h1 className="font-heading text-[clamp(4rem,12vw,10rem)] leading-[0.8] uppercase tracking-tighter">
-              HIMALAYAN <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent [-webkit-text-stroke:0px] italic">PURITY.</span>
+              BIR BILLING <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent [-webkit-text-stroke:0px] italic">TEA.</span>
             </h1>
           </RevealOnScroll>
 
@@ -237,7 +237,7 @@ const Home = () => {
       <footer className="py-20 px-[5vw] bg-black border-t border-white/5">
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
           <div className="max-w-[400px]">
-            <h2 className="text-4xl font-heading uppercase mb-8">Bir <span className="text-accent">Cooperative.</span></h2>
+            <h2 className="text-4xl font-heading uppercase mb-8">Bir Billing <span className="text-accent">Tea.</span></h2>
             <p className="text-white/40 font-light leading-relaxed">
               Preserving Himalayan tea heritage since the late 20th century. A community of 500+ small growers in Kangra Valley.
             </p>
