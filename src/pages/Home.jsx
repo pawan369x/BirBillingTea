@@ -165,14 +165,14 @@ const Home = () => {
       </section>
 
       {/* 4. ULTRA-MODERN COLLECTIONS */}
-      <section className="py-40 px-[5vw] bg-white text-black rounded-[60px] relative z-30">
+      <section className="py-24 md:py-40 px-[5vw] bg-white text-black rounded-[30px] md:rounded-[80px] relative z-30 -mt-16 md:-mt-24">
         <div className="max-w-[1300px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-32 gap-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-32 gap-10">
             <div>
-              <h2 className="text-7xl md:text-9xl font-heading uppercase leading-none mb-4">Our <br /> Signature</h2>
-              <span className="text-accent uppercase tracking-[10px] font-bold">Blends 2026</span>
+              <h2 className="text-[clamp(3.5rem,12vw,10rem)] md:text-9xl font-heading uppercase leading-[0.85] mb-6">Our <br /> Signature</h2>
+              <span className="text-accent uppercase tracking-[6px] md:tracking-[15px] font-black text-[10px] md:text-sm">Blends 2026</span>
             </div>
-            <p className="max-w-[350px] text-black/50 text-right italic text-lg">
+            <p className="max-w-[400px] text-black/50 text-left md:text-right italic text-lg md:text-xl leading-relaxed">
               "A limited collection of the season's finest flush, hand-crafted in Bir."
             </p>
           </div>
@@ -259,53 +259,7 @@ const Home = () => {
       {/* 7. FAQ */}
       <FAQSection />
 
-      {/* FOOTER */}
-      <footer className="py-20 px-[5vw] bg-black border-t border-white/5">
-        <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-          <div className="max-w-[400px]">
-            <svg width="240" height="130" viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg" className="mb-6 drop-shadow-[0_0_24px_rgba(212,175,55,0.4)]">
-              {/* Mountain peaks */}
-              <path d="M28 38 L38 20 L48 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
-              <path d="M36 38 L48 16 L60 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
-              <path d="M46 38 L56 24 L66 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
-              {/* Tea leaf branch */}
-              <path d="M52 34 Q62 28 72 32" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M56 32 Q60 26 65 30" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
-              <path d="M62 30 Q67 24 71 28" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
-              <path d="M66 30 Q72 26 75 31" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
-              {/* Text */}
-              <text x="48" y="52" textAnchor="middle" fontFamily="Georgia, serif" fontSize="10" fontWeight="bold" fill="#D4AF37" letterSpacing="2.5">BIR BILLING</text>
-              <text x="48" y="62" textAnchor="middle" fontFamily="Georgia, serif" fontSize="8" fill="#D4AF37" letterSpacing="4">TEA.</text>
-            </svg>
-            <p className="text-white/40 font-light leading-relaxed">
-              Preserving Himalayan tea heritage since the late 20th century. A community of 500+ small growers in Kangra Valley.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 gap-20">
-            <div className="space-y-6">
-              <span className="uppercase text-[10px] tracking-widest font-black text-accent">Navigation</span>
-              <ul className="space-y-4 text-sm font-bold uppercase tracking-widest">
-                <li className="hover:text-accent cursor-pointer transition-colors"><Link to="/">Home</Link></li>
-                <li className="hover:text-accent cursor-pointer transition-colors"><Link to="/heritage">Factory</Link></li>
-                <li className="hover:text-accent cursor-pointer transition-colors"><Link to="/about">Our Story</Link></li>
-                <li className="hover:text-accent cursor-pointer transition-colors"><Link to="/premium-teas">Collections</Link></li>
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <span className="uppercase text-[10px] tracking-widest font-black text-accent">Connect</span>
-              <div className="flex gap-6">
-                <i className="ri-instagram-line text-xl hover:text-accent cursor-pointer transition-colors"></i>
-                <i className="ri-facebook-circle-fill text-xl hover:text-accent cursor-pointer transition-colors"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[1300px] mx-auto mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[4px] text-white/20">
-          <p>© 2026 The Bir Cooperative Tea Factory</p>
-          <p className="flex items-center gap-2 italic"> <Mountain size={14} /> Made in Himachal Pradesh </p>
-        </div>
-      </footer>
 
       <style jsx="true">{`
         @keyframes marquee {
