@@ -1,21 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import RevealOnScroll from '../components/RevealOnScroll';
 import MagneticButton from '../components/MagneticButton';
 import {
   Leaf, Mountain, Wind, Coffee, Heart, Users, ArrowRight,
-  Mail, MapPin, Phone, ArrowUpRight, CheckCircle, Zap, ShieldCheck, Droplets
+  Mail, MapPin, Phone, ArrowUpRight, CheckCircle, Zap, ShieldCheck, Droplets, Plus, Minus
 } from 'lucide-react';
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.pageYOffset;
+      setScrollY(window.pageYOffset);
       const parallaxElements = document.querySelectorAll('.parallax');
       parallaxElements.forEach((el) => {
         const speed = el.getAttribute('data-speed');
         if (speed) {
-          el.style.transform = `translateY(${scrollY * speed}px)`;
+          el.style.transform = `translateY(${window.pageYOffset * speed}px)`;
         }
       });
     };
@@ -32,54 +34,75 @@ const Home = () => {
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-accent selection:text-black overflow-x-hidden">
 
-      {/* 1. ULTRA-PREMIUM HERO SECTION */}
-      <header id="home" className="h-[110vh] flex items-center relative overflow-hidden px-[5vw]">
-        {/* Cinematic Background */}
+      {/* 1. NEW ADVANCED HERO SECTION */}
+      <header id="home" className="min-h-screen flex items-center relative overflow-hidden px-[5vw] py-32">
+        {/* Cinematic Background with Zoom Effect */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-110 parallax brightness-[0.35]"
-          data-speed="0.2"
-          style={{ backgroundImage: "url('/assets/bir_tea_factory_1773989094698.png')" }}
+          className="absolute inset-0 bg-cover bg-center parallax brightness-[0.4] transition-transform duration-700 ease-out"
+          data-speed="0.15"
+          style={{
+            backgroundImage: "url('/assets/bir_tea_factory_1773989094698.png')",
+            transform: `scale(${1 + scrollY * 0.0005}) translateY(${scrollY * 0.15}px)`
+          }}
         ></div>
 
-        {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-[#0a0a0a]"></div>
+        {/* Dynamic Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-1"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-1"></div>
 
-        {/* Floating Glassmorphism Element */}
-        <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-accent/10 rounded-full blur-[100px] animate-pulse"></div>
-
-        <div className="relative z-10 max-w-[900px]">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto">
           <RevealOnScroll direction="up">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
-              <div className="w-2 h-2 rounded-full bg-accent animate-ping"></div>
-              <span className="text-[10px] uppercase tracking-[4px] font-bold text-accent">Est. Late 20th Century</span>
+            {/* CLEAN MODERN CAPTION */}
+            <div className="flex items-center gap-6 mb-10 group">
+              <div className="h-[1px] w-16 bg-accent group-hover:w-24 transition-all duration-700"></div>
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.8em] font-black text-white/90">
+                4500FT ABOVE THE ORDINARY
+              </span>
             </div>
 
-            <h1 className="font-heading text-[clamp(4rem,12vw,10rem)] leading-[0.8] uppercase tracking-tighter">
-              BIR BILLING <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-accent [-webkit-text-stroke:0px] italic">TEA.</span>
-            </h1>
+            {/* HYBRID TYPOGRAPHY STYLE */}
+            <div className="relative">
+              <h1 className="font-heading text-[clamp(3rem,13vw,12rem)] leading-[0.8] uppercase mb-6">
+                <span className="block tracking-tighter hover:tracking-normal transition-all duration-1000 cursor-default">
+                  BIR <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">BILLING</span>
+                </span>
+                <span className="block italic font-light text-accent flex items-center gap-8">
+                  TEA <span className="text-[0.2em] not-italic tracking-[0.5em] text-white/20 hidden md:block">Factory</span>
+                </span>
+              </h1>
+            </div>
           </RevealOnScroll>
 
           <RevealOnScroll direction="up" delay={0.4}>
-            <div className="flex flex-col md:flex-row gap-10 mt-12 items-start md:items-center">
-              <p className="text-lg font-light text-white/60 max-w-[400px] leading-relaxed border-l border-accent/30 pl-6">
-                Crafted at 4,500ft in the heart of Kangra Valley. Experience the gold standard of Himalayan Cooperative farming.
-              </p>
-              <MagneticButton>
-                <button className="px-10 py-5 bg-accent text-black rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-500 shadow-[0_0_40px_rgba(212,175,55,0.3)]">
-                  Shop Collection
+            <div className="flex flex-col md:flex-row gap-12 mt-12 items-start md:items-center">
+              <div className="max-w-[550px] border-l-2 border-accent/30 pl-8">
+                <p className="text-lg md:text-xl font-light text-white/50 leading-relaxed">
+                  Deep in the Kangra Valley, we preserve the <span className="text-white font-medium">Orthodox Art</span> of tea making. Every leaf is a story of Himalayan heritage.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <MagneticButton>
+                  <button className="px-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-accent transition-all duration-500 shadow-2xl">
+                    Shop Collection
+                  </button>
+                </MagneticButton>
+                <div className="w-16 h-[1px] bg-white/20 hidden md:block"></div>
+                <button className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
+                  Our Story
                 </button>
-              </MagneticButton>
+              </div>
             </div>
           </RevealOnScroll>
         </div>
 
-        {/* Rotating Badge - More Subtle */}
-        <div className="absolute bottom-[50px] right-[5vw] w-[150px] h-[150px] [animation:rotate_20s_linear_infinite] opacity-50">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-white text-[10px] tracking-[3px] uppercase font-bold">
-            <path d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" id="circle" fill="none" />
-            <text><textPath href="#circle">ORTHODOX • KANGRA TEA • 100% ORGANIC •</textPath></text>
-          </svg>
+        {/* SIDE FLOATING BADGE - VERY UNIQUE */}
+        <div
+          className="absolute right-[5vw] top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-10 opacity-20 hover:opacity-100 transition-opacity duration-700"
+          style={{ transform: `translateY(${-scrollY * 0.2}px)` }}
+        >
+          <span className="[writing-mode:vertical-rl] uppercase tracking-[15px] text-[10px] font-black">ESTABLISHED 1980</span>
+          <div className="w-[1px] h-32 bg-gradient-to-b from-white to-transparent"></div>
         </div>
       </header>
 
@@ -91,7 +114,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 3. THE CRAFT - INTERACTIVE SECTION */}
+      {/* 3. THE CRAFT */}
       <section className="py-40 px-[5vw] relative">
         <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <RevealOnScroll direction="left">
@@ -183,7 +206,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. THE PROCESS - CINEMATIC VERTICAL TIMELINE */}
+      {/* 5. THE PROCESS */}
       <section className="py-40 px-[5vw] bg-black">
         <div className="max-w-[1000px] mx-auto">
           <div className="text-center mb-32">
@@ -214,7 +237,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 6. CALL TO ACTION - IMMERSIVE */}
+      {/* 6. CALL TO ACTION */}
       <section className="py-40 px-[5vw] relative overflow-hidden">
         <div className="absolute inset-0 bg-accent opacity-5 blur-[150px] animate-pulse"></div>
         <div className="max-w-[1300px] mx-auto text-center relative z-10">
@@ -233,7 +256,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FOOTER - DARK LUXURY */}
+      {/* 7. FAQ */}
+      <FAQSection />
+
+      {/* FOOTER */}
       <footer className="py-20 px-[5vw] bg-black border-t border-white/5">
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
           <div className="max-w-[400px]">
@@ -269,11 +295,6 @@ const Home = () => {
       </footer>
 
       <style jsx="true">{`
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-        @keyframes float {
-          0%, 100% { transform: translateY(0) rotate(0); }
-          50% { transform: translateY(-20px) rotate(10deg); }
-        }
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -281,8 +302,98 @@ const Home = () => {
         .animate-marquee {
           animation: marquee 40s linear infinite;
         }
+        .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+          opacity: 0;
+        }
+        .faq-answer.open {
+          max-height: 600px;
+          opacity: 1;
+        }
       `}</style>
     </div>
+  );
+};
+
+const faqs = [
+  {
+    q: "What makes Bir Billing Tea different from other teas?",
+    a: "Our tea is grown at 4,500ft altitude in the Kangra Valley — one of the world's oldest tea-growing regions. We use the traditional Orthodox process where every leaf is hand-picked and slow-rolled, preserving the natural aroma and full-leaf integrity that mass-produced teas can never match."
+  },
+  {
+    q: "Is your tea certified organic and pesticide-free?",
+    a: "Yes. All our gardens are cultivated without any synthetic pesticides or fertilizers. We follow GI-tagged (Geographical Indication) organic farming practices passed down through generations of Himalayan cooperative farmers."
+  },
+  {
+    q: "How do you ship and how long does it take?",
+    a: "We ship directly from our factory in Bir via trusted courier partners across India. Orders are typically dispatched within 1–2 business days and delivered within 4–7 days depending on your location. Freshness sealing is done in-house."
+  },
+  {
+    q: "Can I order in bulk or for wholesale?",
+    a: "Absolutely. We supply to hotels, restaurants, cafes, and bulk buyers. Contact us directly on WhatsApp or email for custom bulk pricing, sample kits, and packaging options tailored to your business needs."
+  },
+  {
+    q: "What is the best way to brew Orthodox Kangra Tea?",
+    a: "Use freshly boiled water at 90–95°C. Add 1 teaspoon of loose-leaf tea per cup, steep for 3–4 minutes, and strain. For a richer experience, add a splash of cold milk after brewing — the traditional Kangra style."
+  },
+  {
+    q: "Do you offer tea tasting or factory visits?",
+    a: "Yes! We welcome visitors to our factory in Bir, Himachal Pradesh. You can schedule a guided tour through our orthodox processing unit, walk through the tea gardens, and participate in a curated tasting session. Contact us in advance to book."
+  }
+];
+
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
+  return (
+    <section className="py-32 md:py-40 px-[5vw] bg-[#020202] relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-[900px] mx-auto relative z-10">
+        <RevealOnScroll direction="up">
+          <div className="mb-16 md:mb-24">
+            <span className="text-accent uppercase tracking-[6px] text-xs font-black block mb-4">Everything You Need To Know</span>
+            <h2 className="font-heading text-5xl md:text-8xl uppercase leading-none tracking-tighter">
+              Questions <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white/60 italic">Answered.</span>
+            </h2>
+          </div>
+        </RevealOnScroll>
+
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <RevealOnScroll key={i} direction="up" delay={i * 0.07}>
+              <div
+                className={`group border rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer
+                    ${openIndex === i
+                    ? 'border-accent/40 bg-white/[0.04]'
+                    : 'border-white/[0.06] bg-white/[0.02] hover:border-white/20'
+                  }`}
+                onClick={() => toggle(i)}
+              >
+                <div className="flex items-center justify-between gap-6 px-6 md:px-10 py-6 md:py-8">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className={`text-xs font-black transition-colors ${openIndex === i ? 'text-accent' : 'text-white/20'}`}>0{i + 1}</span>
+                    <h3 className="font-heading text-base md:text-xl uppercase tracking-tight">{faq.q}</h3>
+                  </div>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${openIndex === i ? 'bg-accent text-black' : 'border-white/20 text-white/40'}`}>
+                    {openIndex === i ? <Minus size={14} /> : <Plus size={14} />}
+                  </div>
+                </div>
+                <div className={`faq-answer ${openIndex === i ? 'open' : ''}`}>
+                  <div className="px-6 md:px-10 pb-8 md:pb-10 ml-8 md:ml-12 border-t border-white/5 pt-6">
+                    <p className="text-white/50 font-light leading-relaxed text-sm md:text-base">{faq.a}</p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
