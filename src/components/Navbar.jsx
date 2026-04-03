@@ -45,7 +45,7 @@ const Navbar = () => {
               transition={{ duration: 0.4 }}
               className="relative"
             >
-              <svg width="240" height="130" viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-500 group-hover:drop-shadow-[0_0_24px_rgba(212,175,55,0.8)]">
+              <svg viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg" className="w-[140px] md:w-[220px] lg:w-[240px] h-auto transition-all duration-500 group-hover:drop-shadow-[0_0_24px_rgba(212,175,55,0.8)]">
                 {/* Mountain peaks */}
                 <path d="M28 38 L38 20 L48 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
                 <path d="M36 38 L48 16 L60 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
@@ -95,15 +95,15 @@ const Navbar = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsModalOpen(true)}
-                className="relative overflow-hidden group px-8 py-3 bg-accent rounded-full transition-all duration-500"
+                className="relative overflow-hidden group px-4 sm:px-8 py-3 bg-accent rounded-full transition-all duration-500"
               >
                 {/* Shimmer Effect */}
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer" />
 
-                <div className="relative flex items-center gap-3 text-bg-dark font-black text-xs tracking-tighter">
-                  <ShoppingBag size={16} strokeWidth={2.5} />
-                  <span className="hidden sm:inline">ESTORE SHOP</span>
-                  <ChevronRight size={14} className="opacity-50 group-hover:translate-x-1 transition-transform" />
+                <div className="relative flex items-center gap-2 sm:gap-3 text-bg-dark font-black text-[10px] sm:text-xs tracking-tighter">
+                  <ShoppingBag size={14} sm:size={16} strokeWidth={2.5} />
+                  <span className="hidden xs:inline">ESTORE SHOP</span>
+                  <ChevronRight size={12} sm:size={14} className="opacity-50 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.button>
             </MagneticButton>
@@ -151,12 +151,17 @@ const Navbar = () => {
               transition={{ delay: 0.1 }}
               className="absolute top-8 left-1/2 -translate-x-1/2"
             >
-              <img
-                src="/assets/logo1.png"
-                alt="Logo"
-                className="h-36 w-auto"
-                style={{ mixBlendMode: 'screen' }}
-              />
+              <svg width="160" height="80" viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 38 L38 20 L48 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                <path d="M36 38 L48 16 L60 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                <path d="M46 38 L56 24 L66 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                <path d="M52 34 Q62 28 72 32" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M56 32 Q60 26 65 30" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                <path d="M62 30 Q67 24 71 28" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                <path d="M66 30 Q72 26 75 31" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                <text x="48" y="52" textAnchor="middle" fontFamily="Georgia, serif" fontSize="10" fontWeight="bold" fill="#D4AF37" letterSpacing="2.5">BIR BILLING</text>
+                <text x="48" y="62" textAnchor="middle" fontFamily="Georgia, serif" fontSize="8" fill="#D4AF37" letterSpacing="4">TEA.</text>
+              </svg>
             </motion.div>
 
             <nav className="relative flex flex-col items-center gap-8 md:gap-10 pt-[10vh]">
