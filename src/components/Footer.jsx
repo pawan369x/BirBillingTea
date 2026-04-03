@@ -18,7 +18,20 @@ const Footer = () => {
       <div className="max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 border-b border-white/5 pb-24">
           <div className="lg:col-span-5">
-            <h2 className="text-5xl font-heading leading-tight uppercase mb-10">Bir Billing <br /> <span className="text-accent italic">Tea.</span></h2>
+            <svg width="240" height="130" viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg" className="mb-8 drop-shadow-[0_0_24px_rgba(212,175,55,0.4)]">
+              {/* Mountain peaks */}
+              <path d="M28 38 L38 20 L48 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+              <path d="M36 38 L48 16 L60 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+              <path d="M46 38 L56 24 L66 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+              {/* Tea leaf branch */}
+              <path d="M52 34 Q62 28 72 32" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M56 32 Q60 26 65 30" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+              <path d="M62 30 Q67 24 71 28" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+              <path d="M66 30 Q72 26 75 31" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+              {/* Text */}
+              <text x="48" y="52" textAnchor="middle" fontFamily="Georgia, serif" fontSize="10" fontWeight="bold" fill="#D4AF37" letterSpacing="2.5">BIR BILLING</text>
+              <text x="48" y="62" textAnchor="middle" fontFamily="Georgia, serif" fontSize="8" fill="#D4AF37" letterSpacing="4">TEA.</text>
+            </svg>
             <p className="text-white/40 max-w-sm mb-10 text-sm leading-relaxed">Preserving the 100-year legacy of Kangra Tea. Supporting local farmers of Himachal Pradesh.</p>
             <div className="flex gap-5">
               {[Instagram, Facebook, Twitter, Mail].map((Icon, i) => (
