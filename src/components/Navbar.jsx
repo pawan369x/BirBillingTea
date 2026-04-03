@@ -39,22 +39,26 @@ const Navbar = () => {
           {/* Brand Logo with Parallax effect */}
           <Link to="/" className="relative z-50 group">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              whileHover={{ y: -2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -2, scale: 1.03 }}
+              transition={{ duration: 0.4 }}
               className="relative"
             >
-              <div className="font-heading text-xl md:text-3xl uppercase tracking-[0.05em] transition-all duration-500 flex flex-col items-start leading-[0.9] group-hover:opacity-80">
-                <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_rgba(255,255,255,0.5)]">
-                  BIR BILLING
-                </span>
-                <span className="text-text-light">
-                  TEA.
-                </span>
-              </div>
-              <motion.div
-                className="absolute -inset-2 bg-accent/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-              />
+              <svg width="240" height="130" viewBox="0 0 130 70" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-500 group-hover:drop-shadow-[0_0_24px_rgba(212,175,55,0.8)]">
+                {/* Mountain peaks */}
+                <path d="M28 38 L38 20 L48 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                <path d="M36 38 L48 16 L60 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                <path d="M46 38 L56 24 L66 38" fill="none" stroke="#D4AF37" strokeWidth="2.4" strokeLinejoin="round"/>
+                {/* Tea leaf branch */}
+                <path d="M52 34 Q62 28 72 32" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M56 32 Q60 26 65 30" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                <path d="M62 30 Q67 24 71 28" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                <path d="M66 30 Q72 26 75 31" fill="none" stroke="#D4AF37" strokeWidth="1.8" strokeLinecap="round"/>
+                {/* Text */}
+                <text x="48" y="52" textAnchor="middle" fontFamily="Georgia, serif" fontSize="10" fontWeight="bold" fill="#D4AF37" letterSpacing="2.5">BIR BILLING</text>
+                <text x="48" y="62" textAnchor="middle" fontFamily="Georgia, serif" fontSize="8" fill="#D4AF37" letterSpacing="4">TEA.</text>
+              </svg>
             </motion.div>
           </Link>
 
@@ -139,6 +143,21 @@ const Navbar = () => {
               <Leaf className="absolute top-10 -left-10 text-accent rotate-45" size={300} />
               <Leaf className="absolute bottom-10 -right-10 text-accent -rotate-12" size={400} />
             </div>
+
+            {/* Logo in mobile menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="absolute top-8 left-1/2 -translate-x-1/2"
+            >
+              <img
+                src="/assets/logo1.png"
+                alt="Logo"
+                className="h-36 w-auto"
+                style={{ mixBlendMode: 'screen' }}
+              />
+            </motion.div>
 
             <nav className="relative flex flex-col items-center gap-8 md:gap-10 pt-[10vh]">
               {navLinks.map((link, idx) => (
