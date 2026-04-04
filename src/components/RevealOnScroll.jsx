@@ -28,6 +28,7 @@ const RevealOnScroll = ({ children, direction = 'up', delay = 0, className = "" 
       animate={isInView ? "visible" : "hidden"}
       transition={{ duration: 0.8, delay: delay, ease: [0.25, 1, 0.5, 1] }}
       className={className}
+      style={{ pointerEvents: 'auto', touchAction: 'manipulation' }}
     >
       {children}
     </motion.div>

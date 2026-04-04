@@ -284,80 +284,132 @@ const Home = () => {
   );
 };
 
+// ... (Baki saare imports same rahenge)
+
 const faqs = [
   {
-    q: "What makes Bir Billing Tea different from other teas?",
-    a: "Our tea is grown at 4,500ft altitude in the Kangra Valley — one of the world's oldest tea-growing regions. We use the traditional Orthodox process where every leaf is hand-picked and slow-rolled, preserving the natural aroma and full-leaf integrity that mass-produced teas can never match."
+    q: "What makes Bir Billing Tea different?",
+    a: "Grown at 4,500ft, our tea undergoes the 'Orthodox Process'—a slow, rhythmic rolling that preserves essential oils. Unlike mass-market CTC, we keep the leaf whole, ensuring every brew is a pure Himalayan infusion.",
+    tag: "Terroir"
   },
   {
-    q: "Is your tea certified organic and pesticide-free?",
-    a: "Yes. All our gardens are cultivated without any synthetic pesticides or fertilizers. We follow GI-tagged (Geographical Indication) organic farming practices passed down through generations of Himalayan cooperative farmers."
+    q: "Is it truly Organic & Certified?",
+    a: "Absolutely. Our gardens are GI-Tagged (Geographical Indication). We reject synthetic pesticides, relying on the Kangra Valley's natural ecosystem to nourish our bushes. It's tea as nature intended.",
+    tag: "Purity"
   },
   {
-    q: "How do you ship and how long does it take?",
-    a: "We ship directly from our factory in Bir via trusted courier partners across India. Orders are typically dispatched within 1–2 business days and delivered within 4–7 days depending on your location. Freshness sealing is done in-house."
+    q: "Global Shipping & Freshness?",
+    a: "We vacuum-seal every batch at the source in Bir. Orders are processed within 48 hours, ensuring the mountain mist is still practically in the bag when it reaches your doorstep.",
+    tag: "Logistics"
   },
   {
-    q: "Can I order in bulk or for wholesale?",
-    a: "Absolutely. We supply to hotels, restaurants, cafes, and bulk buyers. Contact us directly on WhatsApp or email for custom bulk pricing, sample kits, and packaging options tailored to your business needs."
+    q: "Wholesale & Custom Curation?",
+    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp or Email.",
+    tag: "Business"
   },
   {
-    q: "What is the best way to brew Orthodox Kangra Tea?",
-    a: "Use freshly boiled water at 90–95°C. Add 1 teaspoon of loose-leaf tea per cup, steep for 3–4 minutes, and strain. For a richer experience, add a splash of cold milk after brewing — the traditional Kangra style."
-  },
-  {
-    q: "Do you offer tea tasting or factory visits?",
-    a: "Yes! We welcome visitors to our factory in Bir, Himachal Pradesh. You can schedule a guided tour through our orthodox processing unit, walk through the tea gardens, and participate in a curated tasting session. Contact us in advance to book."
+    q: "The Perfect Brewing Ritual?",
+    a: "90°C water, 3 minutes of patience, and zero haste. For Kangra Orthodox, we recommend skipping the sugar to truly experience the floral notes unique to our high-altitude soil.",
+    tag: "Ritual"
   }
 ];
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+  const [openIndex, setOpenIndex] = useState(0); // Pehla wala open rakhenge for design depth
 
   return (
-    <section className="py-32 md:py-40 px-[5vw] bg-[#020202] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-40 px-[5vw] bg-[#050505] relative overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px] animate-pulse pointer-events-none" />
 
-      <div className="max-w-[900px] mx-auto relative z-10">
-        <RevealOnScroll direction="up">
-          <div className="mb-16 md:mb-24">
-            <span className="text-accent uppercase tracking-[6px] text-xs font-black block mb-4">Everything You Need To Know</span>
-            <h2 className="font-heading text-5xl md:text-8xl uppercase leading-none tracking-tighter">
-              Questions <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white/60 italic">Answered.</span>
-            </h2>
+      <div className="max-w-[1300px] mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+
+          {/* LEFT SIDE: STICKY HEADER */}
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-40">
+              <RevealOnScroll direction="left">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-[1px] bg-accent"></div>
+                  <span className="text-accent uppercase tracking-[6px] text-xs font-black">Expertise</span>
+                </div>
+                <h2 className="font-heading text-6xl md:text-8xl uppercase leading-[0.9] mb-10">
+                  Common <br />
+                  <span className="italic text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">Curiosities</span>
+                </h2>
+                <p className="text-white/40 text-lg font-light leading-relaxed max-w-sm mb-12">
+                  Everything you need to know about our Himalayan heritage and the art of the perfect brew.
+                </p>
+
+                {/* Visual Badge */}
+                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-md inline-flex items-center gap-6">
+                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                    <Zap size={20} />
+                  </div>
+                  <div>
+                    <span className="block uppercase tracking-widest text-[10px] font-bold text-accent">Factory Direct</span>
+                    <p className="text-sm text-white/60">Skipping middlemen since 1980.</p>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
           </div>
-        </RevealOnScroll>
 
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
-            <RevealOnScroll key={i} direction="up" delay={i * 0.07}>
-              <div
-                className={`group border rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer
+          {/* RIGHT SIDE: ADVANCED ACCORDIONS */}
+          <div className="lg:col-span-7 space-y-6">
+            {faqs.map((faq, i) => (
+              <RevealOnScroll key={i} direction="up" delay={i * 0.1}>
+                <div
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  onTouchEnd={(e) => { e.preventDefault(); setOpenIndex(openIndex === i ? null : i); }}
+                  style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
+                  className={`group relative overflow-hidden transition-all duration-700 cursor-pointer rounded-[32px] 
                     ${openIndex === i
-                    ? 'border-accent/40 bg-white/[0.04]'
-                    : 'border-white/[0.06] bg-white/[0.02] hover:border-white/20'
-                  }`}
-                onClick={() => toggle(i)}
-              >
-                <div className="flex items-center justify-between gap-6 px-6 md:px-10 py-6 md:py-8">
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className={`text-xs font-black transition-colors ${openIndex === i ? 'text-accent' : 'text-white/20'}`}>0{i + 1}</span>
-                    <h3 className="font-heading text-base md:text-xl uppercase tracking-tight">{faq.q}</h3>
-                  </div>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${openIndex === i ? 'bg-accent text-black' : 'border-white/20 text-white/40'}`}>
-                    {openIndex === i ? <Minus size={14} /> : <Plus size={14} />}
+                      ? 'bg-white text-black shadow-[0_20px_80px_-20px_rgba(255,255,255,0.15)]'
+                      : 'bg-white/[0.03] text-white border border-white/10 hover:border-white/30'}`}
+                >
+                  {/* Watermark Number */}
+                  <span className={`absolute -right-4 -bottom-6 font-heading text-9xl transition-all duration-700 pointer-events-none
+                    ${openIndex === i ? 'opacity-5 text-black' : 'opacity-[0.02] text-white'}`}>
+                    0{i + 1}
+                  </span>
+
+                  <div className="relative z-10 p-8 md:p-10">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex flex-col gap-2">
+                        <span className={`text-[10px] uppercase tracking-[4px] font-bold transition-colors duration-500
+                          ${openIndex === i ? 'text-black/40' : 'text-accent'}`}>
+                          {faq.tag}
+                        </span>
+                        <h3 className="font-heading text-xl md:text-2xl uppercase tracking-tight pr-10">
+                          {faq.q}
+                        </h3>
+                      </div>
+
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-500
+                        ${openIndex === i ? 'bg-black text-white border-black rotate-180' : 'border-white/20 group-hover:bg-white/10'}`}>
+                        {openIndex === i ? <Minus size={20} /> : <Plus size={20} />}
+                      </div>
+                    </div>
+
+                    <div className={`faq-answer ${openIndex === i ? 'open' : ''}`}>
+                      <div className="border-t border-black/10 mt-8 pt-8">
+                        <p className={`text-lg leading-relaxed font-light italic transition-colors duration-500
+                          ${openIndex === i ? 'text-black/70' : 'text-white/50'}`}>
+                          "{faq.a}"
+                        </p>
+
+                        <div className="mt-8 flex items-center gap-4">
+                          <div className={`h-[1px] w-8 transition-all duration-500 ${openIndex === i ? 'bg-black/20' : 'bg-accent/20'}`}></div>
+                          <span className="text-[10px] uppercase tracking-widest opacity-50">Verified Wisdom</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className={`faq-answer ${openIndex === i ? 'open' : ''}`}>
-                  <div className="px-6 md:px-10 pb-8 md:pb-10 ml-8 md:ml-12 border-t border-white/5 pt-6">
-                    <p className="text-white/50 font-light leading-relaxed text-sm md:text-base">{faq.a}</p>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-          ))}
+              </RevealOnScroll>
+            ))}
+          </div>
         </div>
       </div>
     </section>
