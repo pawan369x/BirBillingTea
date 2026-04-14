@@ -40,6 +40,7 @@ const WhatsAppModal = ({ productName, price, onClose }) => {
         exit={{ opacity: 0 }}
         className="absolute inset-0 bg-black/60 backdrop-blur-md"
         onClick={onClose}
+        style={{ pointerEvents: 'auto', touchAction: 'none' }}
       />
 
       {/* Modal Content */}
@@ -56,9 +57,10 @@ const WhatsAppModal = ({ productName, price, onClose }) => {
 
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:rotate-90 transition-all duration-300 z-10"
+          className="absolute top-5 right-5 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:rotate-90 transition-all duration-300 z-[2100]"
+          aria-label="Close modal"
         >
-          <X size={16} />
+          <X size={24} />
         </button>
 
         {/* Header content */}

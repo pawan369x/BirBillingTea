@@ -284,8 +284,7 @@ const Home = () => {
   );
 };
 
-// ... (Baki saare imports same rahenge)
-
+// Signature FAQ Data 
 const faqs = [
   {
     q: "What makes Bir Billing Tea different?",
@@ -361,7 +360,6 @@ const FAQSection = () => {
               <RevealOnScroll key={i} direction="up" delay={i * 0.1}>
                 <div
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  onTouchEnd={(e) => { e.preventDefault(); setOpenIndex(openIndex === i ? null : i); }}
                   style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
                   className={`group relative overflow-hidden transition-all duration-700 cursor-pointer rounded-[32px] 
                     ${openIndex === i

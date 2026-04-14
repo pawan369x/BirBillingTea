@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center max-w-[1600px] mx-auto px-[6vw]">
 
           {/* Brand Logo with Parallax effect */}
-          <Link to="/" className="relative z-50 group">
+          <Link to="/" className={`relative z-50 group transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto' : 'opacity-100'}`}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -95,7 +95,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsModalOpen(true)}
-                className="relative overflow-hidden group px-4 sm:px-8 py-3 bg-accent rounded-full transition-all duration-500"
+                className={`relative overflow-hidden group px-4 sm:px-8 py-3 bg-accent rounded-full transition-all duration-500 ${mobileMenuOpen ? 'opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto' : 'opacity-100'}`}
               >
                 {/* Shimmer Effect */}
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer" />
@@ -110,8 +110,9 @@ const Navbar = () => {
 
 
             <button
-              className="lg:hidden relative z-50 p-2 text-text-light hover:text-accent transition-colors"
+              className="lg:hidden relative z-[1100] p-2 text-text-light hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              style={{ touchAction: 'manipulation' }}
             >
               <AnimatePresence mode="wait">
                 {mobileMenuOpen ? (
