@@ -49,6 +49,34 @@ const Home = () => {
     }
   ];
 
+  const testimonials = [
+    { 
+      text: "The Vintage Black is a revelation. I've tasted teas from Darjeeling to Assam, but the character of Bir's orthodox blend is unmatched.", 
+      author: "Ananya Sharma", 
+      role: "Sommelier" 
+    },
+    { 
+      text: "Buying direct from the factory ensures freshness that you simply can't find in big-brand stores. The Himalayan Green is my daily ritual.", 
+      author: "Vikram Mehta", 
+      role: "Nature Explorer" 
+    },
+    { 
+      text: "The aroma of the Vintage Black takes me back to my childhood in the hills. Simply authentic.", 
+      author: "Rajesh Khanna", 
+      role: "Heritage Collector" 
+    },
+    { 
+      text: "Best green tea I've had. It's clean, fresh, and doesn't have that bitter aftertaste common in store-bought brands.", 
+      author: "Sarah J.", 
+      role: "Wellness Coach" 
+    },
+    { 
+      text: "The packaging itself is a work of art, but the tea inside is the real masterpiece. A must-try for any tea lover.", 
+      author: "Kabir Das", 
+      role: "Art Director" 
+    }
+  ];
+
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-accent selection:text-black overflow-x-hidden">
 
@@ -289,41 +317,41 @@ const Home = () => {
       </section>
 
       {/* 7. TESTIMONIALS - SOCIAL PROOF */}
-      <section className="py-40 px-[5vw] bg-white text-black rounded-[80px] relative z-30 -mt-20">
-        <div className="max-w-[1300px] mx-auto">
+      <section className="py-40 bg-white text-black rounded-[80px] relative z-30 -mt-20 overflow-hidden">
+        <div className="px-[5vw]">
           <div className="text-center mb-24">
-            <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">Voices of Bir</span>
-            <h2 className="text-6xl md:text-8xl font-heading uppercase leading-none">Loved By <br /> <span className="italic opacity-40">Tea Connoisseurs.</span></h2>
+            <RevealOnScroll direction="up">
+              <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">Voices of Bir</span>
+              <h2 className="text-6xl md:text-8xl font-heading uppercase leading-none">Loved By <br /> <span className="italic opacity-40">Tea Connoisseurs.</span></h2>
+            </RevealOnScroll>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { 
-                text: "The Vintage Black is a revelation. I've tasted teas from Darjeeling to Assam, but the character of Bir's orthodox blend is unmatched.", 
-                author: "Ananya Sharma", 
-                role: "Sommelier" 
-              },
-              { 
-                text: "Buying direct from the factory ensures freshness that you simply can't find in big-brand stores. The Himalayan Green is my daily ritual.", 
-                author: "Vikram Mehta", 
-                role: "Nature Explorer" 
-              }
-            ].map((item, i) => (
-              <RevealOnScroll key={i} direction={i % 2 === 0 ? "left" : "right"}>
-                <div className="p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 group">
+        {/* Infinite Moving Marquee */}
+        <div className="relative flex overflow-hidden">
+          <div className="flex animate-scroll hover:[animation-play-state:paused] gap-8 py-4">
+            {[...testimonials, ...testimonials].map((item, i) => (
+              <div 
+                key={i} 
+                className="flex-shrink-0 w-[350px] md:w-[450px] p-10 md:p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 group flex flex-col justify-between"
+              >
+                <div>
                   <div className="flex gap-1 mb-8">
-                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-4 h-4 bg-accent rounded-full"></div>)}
+                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-3 h-3 bg-accent rounded-full opacity-60"></div>)}
                   </div>
-                  <p className="text-2xl md:text-3xl font-light italic mb-10 leading-relaxed">"{item.text}"</p>
-                  <div className="flex items-center gap-6 border-t border-black/5 group-hover:border-white/10 pt-8 transition-colors">
-                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-black">{item.author[0]}</div>
-                    <div>
-                      <span className="block font-black uppercase text-xs tracking-widest">{item.author}</span>
-                      <span className="block text-[10px] opacity-40 uppercase tracking-widest">{item.role}</span>
-                    </div>
+                  <p className="text-xl md:text-2xl font-light italic mb-10 leading-relaxed">"{item.text}"</p>
+                </div>
+                
+                <div className="flex items-center gap-6 border-t border-black/5 group-hover:border-white/10 pt-8 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-black text-black group-hover:text-accent transition-colors">
+                    {item.author[0]}
+                  </div>
+                  <div>
+                    <span className="block font-black uppercase text-[10px] tracking-widest">{item.author}</span>
+                    <span className="block text-[8px] opacity-40 uppercase tracking-widest">{item.role}</span>
                   </div>
                 </div>
-              </RevealOnScroll>
+              </div>
             ))}
           </div>
         </div>
@@ -389,6 +417,14 @@ const Home = () => {
         .animate-marquee {
           animation: marquee 40s linear infinite;
         }
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / 2)); }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+          width: max-content;
+        }
         .faq-answer {
           max-height: 0;
           overflow: hidden;
@@ -423,7 +459,7 @@ const faqs = [
   },
   {
     q: "Wholesale & Custom Curation?",
-    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp or Email.",
+    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp (+91 70186 66302) or Email (birbillingtea@gmail.com).",
     tag: "Business"
   },
   {
