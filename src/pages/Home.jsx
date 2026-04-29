@@ -26,9 +26,61 @@ const Home = () => {
   }, []);
 
   const products = [
+<<<<<<< HEAD
     { title: "Black Tea", desc: "Robust and full-bodied, fermented for Himalayan strength.", icon: <Coffee size={32} />, tag: "Bold" },
     { title: "Green Tea", desc: "Fresh, unoxidized leaves packed with antioxidants.", icon: <Leaf size={32} />, tag: "Vitality" },
     { title: "Orthodox Tea", desc: "Hand-processed whole leaf tea with floral notes.", icon: <Wind size={32} />, tag: "Premium" }
+=======
+    { 
+      title: "Vintage Black", 
+      desc: "A bold, heritage blend of SFTGFOP-1 and BPS. Deep, malty, and profoundly Himalayan.", 
+      icon: <Coffee size={32} />, 
+      tag: "Bold",
+      image: "/assets/vintage_black_pack.png"
+    },
+    { 
+      title: "Himalayan Green", 
+      desc: "Pure Laccha & Mogra blend. Crisp, refreshing, and packed with high-altitude antioxidants.", 
+      icon: <Leaf size={32} />, 
+      tag: "Vitality",
+      image: "/assets/green_tea_pack.png"
+    },
+    { 
+      title: "Leafy Bliss", 
+      desc: "Our finest Orthodox SFTGFOP-1. Hand-rolled buds with a delicate floral fragrance.", 
+      icon: <Wind size={32} />, 
+      tag: "Premium",
+      image: "/assets/natural_spark_pack.png"
+    }
+  ];
+
+  const testimonials = [
+    { 
+      text: "The Vintage Black is a revelation. I've tasted teas from Darjeeling to Assam, but the character of Bir's orthodox blend is unmatched.", 
+      author: "Ananya Sharma", 
+      role: "Sommelier" 
+    },
+    { 
+      text: "Buying direct from the factory ensures freshness that you simply can't find in big-brand stores. The Himalayan Green is my daily ritual.", 
+      author: "Vikram Mehta", 
+      role: "Nature Explorer" 
+    },
+    { 
+      text: "The aroma of the Vintage Black takes me back to my childhood in the hills. Simply authentic.", 
+      author: "Rajesh Khanna", 
+      role: "Heritage Collector" 
+    },
+    { 
+      text: "Best green tea I've had. It's clean, fresh, and doesn't have that bitter aftertaste common in store-bought brands.", 
+      author: "Sarah J.", 
+      role: "Wellness Coach" 
+    },
+    { 
+      text: "The packaging itself is a work of art, but the tea inside is the real masterpiece. A must-try for any tea lover.", 
+      author: "Kabir Das", 
+      role: "Art Director" 
+    }
+>>>>>>> main
   ];
 
   return (
@@ -83,6 +135,7 @@ const Home = () => {
 
               <div className="flex items-center gap-6">
                 <MagneticButton>
+<<<<<<< HEAD
                   <button className="px-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-accent transition-all duration-500 shadow-2xl">
                     Shop Collection
                   </button>
@@ -91,6 +144,16 @@ const Home = () => {
                 <button className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
                   Our Story
                 </button>
+=======
+                  <Link to="/premium-teas" className="px-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-accent transition-all duration-500 shadow-2xl flex items-center justify-center">
+                    Shop Collection
+                  </Link>
+                </MagneticButton>
+                <div className="w-16 h-[1px] bg-white/20 hidden md:block"></div>
+                <Link to="/heritage" className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
+                  Our Story
+                </Link>
+>>>>>>> main
               </div>
             </div>
           </RevealOnScroll>
@@ -180,11 +243,22 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {products.map((item, i) => (
               <RevealOnScroll key={i} delay={i * 0.2}>
+<<<<<<< HEAD
                 <div className="group relative p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 h-[500px] flex flex-col justify-between overflow-hidden">
+=======
+                <div className="group relative p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 h-[550px] flex flex-col justify-between overflow-hidden">
+                  
+                  {/* Floating Product Image */}
+                  <div className="absolute -right-10 top-20 w-64 h-64 opacity-20 group-hover:opacity-100 group-hover:-translate-x-10 group-hover:scale-110 transition-all duration-1000 pointer-events-none">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)]" />
+                  </div>
+
+>>>>>>> main
                   <div className="absolute top-10 right-10 text-[10px] uppercase tracking-widest font-bold opacity-30 group-hover:opacity-100 group-hover:text-accent transition-all">
                     {item.tag}
                   </div>
 
+<<<<<<< HEAD
                   <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center text-black group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
                     {item.icon}
                   </div>
@@ -198,6 +272,27 @@ const Home = () => {
                       <span className="uppercase text-xs font-black tracking-widest">Discover</span>
                       <ArrowRight size={20} className="text-accent" />
                     </div>
+=======
+                  <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center text-black group-hover:bg-accent group-hover:scale-110 transition-all duration-500 relative z-10">
+                    {item.icon}
+                  </div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-accent">
+                        {i === 1 ? "Best Seller" : "New Arrival"}
+                      </span>
+                    </div>
+                    <h3 className="text-4xl font-heading mb-6 uppercase tracking-tighter">{item.title}</h3>
+                    <p className="text-black/50 group-hover:text-white/60 mb-10 leading-relaxed font-light max-w-[200px]">
+                      {item.desc}
+                    </p>
+                    <Link to="/premium-teas" className="flex items-center gap-4 cursor-pointer group-hover:gap-6 transition-all duration-500">
+                      <span className="uppercase text-xs font-black tracking-widest">Discover</span>
+                      <ArrowRight size={20} className="text-accent" />
+                    </Link>
+>>>>>>> main
                   </div>
                 </div>
               </RevealOnScroll>
@@ -237,7 +332,73 @@ const Home = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* 6. CALL TO ACTION */}
+=======
+      {/* 6. STATS COUNTER - BRAND AUTHORITY */}
+      <section className="py-32 px-[5vw] bg-[#080808] border-y border-white/5">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20">
+          {[
+            { label: "Established", value: "1980", unit: "" },
+            { label: "Altitude", value: "4500", unit: "FT" },
+            { label: "Small Farmers", value: "500", unit: "+" },
+            { label: "GI Status", value: "A+", unit: "GRADE" }
+          ].map((stat, i) => (
+            <RevealOnScroll key={i} delay={i * 0.1}>
+              <div className="text-center group">
+                <span className="block text-accent text-6xl md:text-8xl font-heading tracking-tighter mb-4 group-hover:scale-110 transition-transform duration-700">{stat.value}</span>
+                <span className="block text-white/20 text-[10px] uppercase tracking-[8px] font-black group-hover:text-accent transition-colors duration-500">
+                  {stat.label} <span className="opacity-50">{stat.unit}</span>
+                </span>
+              </div>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. TESTIMONIALS - SOCIAL PROOF */}
+      <section className="py-40 bg-white text-black rounded-[80px] relative z-30 -mt-20 overflow-hidden">
+        <div className="px-[5vw]">
+          <div className="text-center mb-24">
+            <RevealOnScroll direction="up">
+              <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">Voices of Bir</span>
+              <h2 className="text-6xl md:text-8xl font-heading uppercase leading-none">Loved By <br /> <span className="italic opacity-40">Tea Connoisseurs.</span></h2>
+            </RevealOnScroll>
+          </div>
+        </div>
+
+        {/* Infinite Moving Marquee */}
+        <div className="relative flex overflow-hidden">
+          <div className="flex animate-scroll hover:[animation-play-state:paused] gap-8 py-4">
+            {[...testimonials, ...testimonials].map((item, i) => (
+              <div 
+                key={i} 
+                className="flex-shrink-0 w-[350px] md:w-[450px] p-10 md:p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 mb-8">
+                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-3 h-3 bg-accent rounded-full opacity-60"></div>)}
+                  </div>
+                  <p className="text-xl md:text-2xl font-light italic mb-10 leading-relaxed">"{item.text}"</p>
+                </div>
+                
+                <div className="flex items-center gap-6 border-t border-black/5 group-hover:border-white/10 pt-8 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center font-black text-black group-hover:text-accent transition-colors">
+                    {item.author[0]}
+                  </div>
+                  <div>
+                    <span className="block font-black uppercase text-[10px] tracking-widest">{item.author}</span>
+                    <span className="block text-[8px] opacity-40 uppercase tracking-widest">{item.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CALL TO ACTION */}
+>>>>>>> main
       <section className="py-40 px-[5vw] relative overflow-hidden">
         <div className="absolute inset-0 bg-accent opacity-5 blur-[150px] animate-pulse"></div>
         <div className="max-w-[1300px] mx-auto text-center relative z-10">
@@ -247,16 +408,54 @@ const Home = () => {
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-8 mt-20">
               <MagneticButton>
+<<<<<<< HEAD
                 <button className="px-16 py-8 bg-white text-black font-black uppercase text-sm tracking-[5px] rounded-full hover:bg-accent transition-colors duration-500 shadow-2xl">
                   Order Samples
                 </button>
+=======
+                <Link to="/premium-teas" className="px-16 py-8 bg-white text-black font-black uppercase text-sm tracking-[5px] rounded-full hover:bg-accent transition-colors duration-500 shadow-2xl flex items-center justify-center">
+                  Order Samples
+                </Link>
+>>>>>>> main
               </MagneticButton>
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* 7. FAQ */}
+=======
+      {/* 9. NEWSLETTER - COMMUNITY */}
+      <section className="py-32 px-[5vw] relative overflow-hidden">
+        <div className="max-w-[1300px] mx-auto">
+          <div className="relative rounded-[60px] bg-[#121212] border border-white/5 p-12 md:p-24 overflow-hidden group text-center">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+            
+            <RevealOnScroll direction="up">
+              <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">The Inner Circle</span>
+              <h2 className="text-5xl md:text-7xl font-heading uppercase leading-none mb-10">Join the Bir <br /><span className="italic opacity-40">Tea Club.</span></h2>
+              <p className="text-white/40 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto italic">
+                "Receive exclusive access to first-flush harvests and traditional mountain brewing secrets."
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Your Email Address" 
+                  className="flex-1 px-8 py-6 rounded-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 focus:outline-none focus:border-accent transition-all font-light"
+                />
+                <button className="px-10 py-6 bg-accent text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-white transition-all duration-500 whitespace-nowrap">
+                  Subscribe
+                </button>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. FAQ */}
+>>>>>>> main
       <FAQSection />
 
 
@@ -269,6 +468,17 @@ const Home = () => {
         .animate-marquee {
           animation: marquee 40s linear infinite;
         }
+<<<<<<< HEAD
+=======
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% / 2)); }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+          width: max-content;
+        }
+>>>>>>> main
         .faq-answer {
           max-height: 0;
           overflow: hidden;
@@ -303,7 +513,11 @@ const faqs = [
   },
   {
     q: "Wholesale & Custom Curation?",
+<<<<<<< HEAD
     a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp or Email.",
+=======
+    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp (+91 70186 66302) or Email (birbillingtea@gmail.com).",
+>>>>>>> main
     tag: "Business"
   },
   {

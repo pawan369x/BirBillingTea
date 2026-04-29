@@ -66,7 +66,11 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-60"></div>
                 <div className="absolute bottom-8 left-8">
+<<<<<<< HEAD
                   <p className="text-accent font-heading text-4xl font-bold">19XX</p>
+=======
+                  <p className="text-accent font-heading text-4xl font-bold">1980</p>
+>>>>>>> main
                   <p className="text-white/60 uppercase tracking-widest text-xs">Year of Establishment</p>
                 </div>
               </div>
