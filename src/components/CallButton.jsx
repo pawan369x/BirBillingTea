@@ -10,7 +10,7 @@ const CallButton = () => {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-8 right-8 z-[999]"
+      className="z-[999]"
     >
       <motion.a
         href={`tel:${phoneNumber}`}

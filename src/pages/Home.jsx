@@ -108,9 +108,9 @@ const Home = () => {
 
             {/* HYBRID TYPOGRAPHY STYLE */}
             <div className="relative">
-              <h1 className="font-heading text-[clamp(3rem,13vw,12rem)] leading-[0.8] uppercase mb-6">
-                <span className="block tracking-tighter hover:tracking-normal transition-all duration-1000 cursor-default">
-                  BIR <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">BILLING</span>
+              <h1 className="font-heading text-[clamp(3rem,13vw,12rem)] leading-[0.9] uppercase mb-6">
+                <span className="block tracking-tight hover:tracking-normal transition-all duration-1000 cursor-default">
+                  BIR <span className="ml-4 text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">BILLING</span>
                 </span>
                 <span className="block italic font-light text-accent flex items-center gap-8">
                   TEA <span className="text-[0.2em] not-italic tracking-[0.5em] text-white/20 hidden md:block">Factory</span>

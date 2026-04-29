@@ -22,7 +22,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
-      <div className="fixed bottom-8 right-8 z-[2000] flex flex-col gap-4">
+      <div className="fixed bottom-8 right-8 z-[2000] flex flex-col items-end gap-4">
         <FloatingWhatsApp />
         <CallButton />
       </div>
