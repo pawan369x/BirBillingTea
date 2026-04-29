@@ -3,22 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Leaf, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from './MagneticButton';
-<<<<<<< HEAD
-import WhatsAppModal from './WhatsAppModal';
-=======
 import { useCart } from '../context/CartContext';
 import CartDrawer from './CartDrawer';
->>>>>>> main
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-<<<<<<< HEAD
-  const [isModalOpen, setIsModalOpen] = useState(false);
-=======
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartCount } = useCart();
->>>>>>> main
   const location = useLocation();
 
   const navLinks = [
@@ -104,21 +96,13 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-<<<<<<< HEAD
-                onClick={() => setIsModalOpen(true)}
-=======
                 onClick={() => setIsCartOpen(true)}
->>>>>>> main
                 className={`relative overflow-hidden group px-4 sm:px-8 py-3 bg-accent rounded-full transition-all duration-500 ${mobileMenuOpen ? 'opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto' : 'opacity-100'}`}
               >
                 {/* Shimmer Effect */}
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer" />
 
                 <div className="relative flex items-center gap-2 sm:gap-3 text-bg-dark font-black text-[10px] sm:text-xs tracking-tighter">
-<<<<<<< HEAD
-                  <ShoppingBag size={14} sm:size={16} strokeWidth={2.5} />
-                  <span className="hidden xs:inline">ESTORE SHOP</span>
-=======
                   <div className="relative">
                     <ShoppingBag size={14} sm:size={16} strokeWidth={2.5} />
                     {cartCount > 0 && (
@@ -132,7 +116,6 @@ const Navbar = () => {
                     )}
                   </div>
                   <span className="hidden xs:inline">BAG</span>
->>>>>>> main
                   <ChevronRight size={12} sm:size={14} className="opacity-50 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.button>
@@ -216,28 +199,12 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-
-<<<<<<< HEAD
-      <AnimatePresence>
-        {isModalOpen && (
-          <WhatsAppModal
-            productName="Bir Tea Organic Selection"
-            price={600}
-            onClose={() => setIsModalOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-=======
       <CartDrawer 
         isOpen={isCartOpen} 
         onClose={() => setIsCartOpen(false)} 
       />
->>>>>>> main
     </>
   );
-
 };
-
-
 
 export default Navbar;

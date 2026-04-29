@@ -26,11 +26,6 @@ const Home = () => {
   }, []);
 
   const products = [
-<<<<<<< HEAD
-    { title: "Black Tea", desc: "Robust and full-bodied, fermented for Himalayan strength.", icon: <Coffee size={32} />, tag: "Bold" },
-    { title: "Green Tea", desc: "Fresh, unoxidized leaves packed with antioxidants.", icon: <Leaf size={32} />, tag: "Vitality" },
-    { title: "Orthodox Tea", desc: "Hand-processed whole leaf tea with floral notes.", icon: <Wind size={32} />, tag: "Premium" }
-=======
     { 
       title: "Vintage Black", 
       desc: "A bold, heritage blend of SFTGFOP-1 and BPS. Deep, malty, and profoundly Himalayan.", 
@@ -80,7 +75,6 @@ const Home = () => {
       author: "Kabir Das", 
       role: "Art Director" 
     }
->>>>>>> main
   ];
 
   return (
@@ -135,16 +129,6 @@ const Home = () => {
 
               <div className="flex items-center gap-6">
                 <MagneticButton>
-<<<<<<< HEAD
-                  <button className="px-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-accent transition-all duration-500 shadow-2xl">
-                    Shop Collection
-                  </button>
-                </MagneticButton>
-                <div className="w-16 h-[1px] bg-white/20 hidden md:block"></div>
-                <button className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
-                  Our Story
-                </button>
-=======
                   <Link to="/premium-teas" className="px-10 py-6 bg-white text-black font-black uppercase text-[10px] tracking-[4px] rounded-full hover:bg-accent transition-all duration-500 shadow-2xl flex items-center justify-center">
                     Shop Collection
                   </Link>
@@ -153,7 +137,6 @@ const Home = () => {
                 <Link to="/heritage" className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
                   Our Story
                 </Link>
->>>>>>> main
               </div>
             </div>
           </RevealOnScroll>
@@ -243,9 +226,6 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {products.map((item, i) => (
               <RevealOnScroll key={i} delay={i * 0.2}>
-<<<<<<< HEAD
-                <div className="group relative p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 h-[500px] flex flex-col justify-between overflow-hidden">
-=======
                 <div className="group relative p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 h-[550px] flex flex-col justify-between overflow-hidden">
                   
                   {/* Floating Product Image */}
@@ -253,26 +233,10 @@ const Home = () => {
                     <img src={item.image} alt={item.title} className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)]" />
                   </div>
 
->>>>>>> main
                   <div className="absolute top-10 right-10 text-[10px] uppercase tracking-widest font-bold opacity-30 group-hover:opacity-100 group-hover:text-accent transition-all">
                     {item.tag}
                   </div>
 
-<<<<<<< HEAD
-                  <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center text-black group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
-                    {item.icon}
-                  </div>
-
-                  <div>
-                    <h3 className="text-4xl font-heading mb-6 uppercase tracking-tighter">{item.title}</h3>
-                    <p className="text-black/50 group-hover:text-white/60 mb-10 leading-relaxed font-light">
-                      {item.desc}
-                    </p>
-                    <div className="flex items-center gap-4 cursor-pointer group-hover:gap-6 transition-all duration-500">
-                      <span className="uppercase text-xs font-black tracking-widest">Discover</span>
-                      <ArrowRight size={20} className="text-accent" />
-                    </div>
-=======
                   <div className="w-20 h-20 rounded-3xl bg-white shadow-xl flex items-center justify-center text-black group-hover:bg-accent group-hover:scale-110 transition-all duration-500 relative z-10">
                     {item.icon}
                   </div>
@@ -292,7 +256,6 @@ const Home = () => {
                       <span className="uppercase text-xs font-black tracking-widest">Discover</span>
                       <ArrowRight size={20} className="text-accent" />
                     </Link>
->>>>>>> main
                   </div>
                 </div>
               </RevealOnScroll>
@@ -332,9 +295,6 @@ const Home = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* 6. CALL TO ACTION */}
-=======
       {/* 6. STATS COUNTER - BRAND AUTHORITY */}
       <section className="py-32 px-[5vw] bg-[#080808] border-y border-white/5">
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20">
@@ -398,7 +358,6 @@ const Home = () => {
       </section>
 
       {/* 8. CALL TO ACTION */}
->>>>>>> main
       <section className="py-40 px-[5vw] relative overflow-hidden">
         <div className="absolute inset-0 bg-accent opacity-5 blur-[150px] animate-pulse"></div>
         <div className="max-w-[1300px] mx-auto text-center relative z-10">
@@ -408,24 +367,15 @@ const Home = () => {
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-8 mt-20">
               <MagneticButton>
-<<<<<<< HEAD
-                <button className="px-16 py-8 bg-white text-black font-black uppercase text-sm tracking-[5px] rounded-full hover:bg-accent transition-colors duration-500 shadow-2xl">
-                  Order Samples
-                </button>
-=======
                 <Link to="/premium-teas" className="px-16 py-8 bg-white text-black font-black uppercase text-sm tracking-[5px] rounded-full hover:bg-accent transition-colors duration-500 shadow-2xl flex items-center justify-center">
                   Order Samples
                 </Link>
->>>>>>> main
               </MagneticButton>
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* 7. FAQ */}
-=======
       {/* 9. NEWSLETTER - COMMUNITY */}
       <section className="py-32 px-[5vw] relative overflow-hidden">
         <div className="max-w-[1300px] mx-auto">
@@ -455,10 +405,7 @@ const Home = () => {
       </section>
 
       {/* 10. FAQ */}
->>>>>>> main
       <FAQSection />
-
-
 
       <style jsx="true">{`
         @keyframes marquee {
@@ -468,8 +415,6 @@ const Home = () => {
         .animate-marquee {
           animation: marquee 40s linear infinite;
         }
-<<<<<<< HEAD
-=======
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(-100% / 2)); }
@@ -478,7 +423,6 @@ const Home = () => {
           animation: scroll 30s linear infinite;
           width: max-content;
         }
->>>>>>> main
         .faq-answer {
           max-height: 0;
           overflow: hidden;
@@ -513,11 +457,7 @@ const faqs = [
   },
   {
     q: "Wholesale & Custom Curation?",
-<<<<<<< HEAD
-    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp or Email.",
-=======
     a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp (+91 70186 66302) or Email (birbillingtea@gmail.com).",
->>>>>>> main
     tag: "Business"
   },
   {
@@ -528,7 +468,7 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(0); // Pehla wala open rakhenge for design depth
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <section className="py-40 px-[5vw] bg-[#050505] relative overflow-hidden">
