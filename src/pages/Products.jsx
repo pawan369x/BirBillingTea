@@ -118,9 +118,10 @@ const Products = () => {
     return productData.filter(p => p.category === activeCategory);
   }, [activeCategory]);
 
-  const handleBulkInquiry = () => {
+  const handleBulkInquiry = (qty = "") => {
     const phoneNumber = "917018666302";
-    const text = `Hello Bir Billing Tea Factory!\n\nI am interested in bulk supply and wholesale prices for your tea products. Please provide a quotation and minimum order quantities.\n\nThank you!`;
+    const qtyText = qty ? ` (${qty})` : "";
+    const text = `Hello Bir Billing Tea Factory!\n\nI am interested in bulk wholesale supply${qtyText} for your tea products. Please connect me with the mobile dealer for pricing and quotes.\n\nThank you!`;
     const encodedText = encodeURIComponent(text);
     const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
     window.open(waUrl, '_blank');
@@ -135,7 +136,7 @@ const Products = () => {
           <div className="flex flex-col md:flex-row justify-between items-end gap-10">
             <div className="max-w-2xl">
               <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">Premium Inventory</span>
-              <h2 className="text-6xl md:text-8xl font-heading uppercase leading-[0.8] tracking-tighter">
+              <h2 className="text-4xl md:text-8xl font-heading uppercase leading-tight md:leading-[0.8] tracking-tighter">
                 OUR <br /> <span className="italic opacity-30">COLLECTION.</span>
               </h2>
             </div>
@@ -178,26 +179,29 @@ const Products = () => {
       </div>
 
       {/* 3. BULK SECTION */}
-      <div className="max-w-[1400px] mx-auto px-[5vw] mt-40">
-        <div className="relative rounded-[60px] bg-white text-black p-12 md:p-24 overflow-hidden group">
+      <div className="max-w-[1400px] mx-auto px-[5vw] mt-20 md:mt-40">
+        <div className="relative rounded-[40px] md:rounded-[60px] bg-white text-black p-8 md:p-24 overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-accent/40 transition-all"></div>
           <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div className="max-w-xl">
-              <h4 className="text-5xl md:text-7xl font-heading uppercase leading-[0.8] mb-8">Market <br /><span className="italic opacity-40 leading-normal">Supply.</span></h4>
-              <p className="text-black/50 text-xl font-light leading-relaxed">We supply to retailers and wholesalers across the market. Partner with Bir Billing Tea Factory for premium quality.</p>
+            <div className="max-w-xl text-center md:text-left">
+              <span className="text-accent uppercase tracking-[6px] text-xs font-black mb-2 block">Direct Dealer Network</span>
+              <h4 className="text-4xl md:text-7xl font-heading uppercase leading-tight md:leading-[0.8] mb-6 md:mb-8">Bulk <br /><span className="italic opacity-40 leading-normal">Supply.</span></h4>
+              <p className="text-black/50 text-lg md:text-xl font-light leading-relaxed">
+                Looking for wholesale volumes like <strong>500kg, 700kg, or 1000kg+</strong>? Get discounted factory-direct rates straight from our mobile dealer. Skip the retail cart and connect immediately.
+              </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <MagneticButton>
                 <a href="tel:+917018666302" className="px-12 py-6 inline-flex items-center justify-center whitespace-nowrap bg-transparent border border-black text-black rounded-full font-black uppercase text-[10px] md:text-xs tracking-[5px] hover:bg-black hover:text-white transition-all">
-                  Call Factory
+                  Call Dealer
                 </a>
               </MagneticButton>
               <MagneticButton>
                 <button 
-                  onClick={handleBulkInquiry}
+                  onClick={() => handleBulkInquiry("500kg / 700kg / 1000kg+")}
                   className="px-12 py-6 inline-flex items-center justify-center whitespace-nowrap bg-black text-white rounded-full font-black uppercase text-[10px] md:text-xs tracking-[5px] hover:bg-accent hover:text-black transition-all"
                 >
-                  Bulk Inquiry
+                  WhatsApp Dealer
                 </button>
               </MagneticButton>
             </div>
@@ -213,7 +217,7 @@ const ProductCard = ({ product, index, addToCart }) => {
 
   return (
     <RevealOnScroll delay={index * 0.1}>
-      <div className="group relative bg-[#121212] rounded-[40px] overflow-hidden border border-white/5 h-[500px] md:h-[650px] flex flex-col justify-end p-6 md:p-10 cursor-default">
+      <div className="group relative bg-[#121212] rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/5 h-[450px] md:h-[650px] flex flex-col justify-end p-6 md:p-10 cursor-default">
         
         {/* Image Layer */}
         <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105">
@@ -234,7 +238,7 @@ const ProductCard = ({ product, index, addToCart }) => {
 
         {/* Content Layer */}
         <div className="relative z-10 w-full transition-all duration-500">
-          <h3 className="text-4xl md:text-6xl font-heading uppercase leading-none mb-6">
+          <h3 className="text-3xl md:text-6xl font-heading uppercase leading-none mb-4 md:mb-6">
             {product.name}
           </h3>
 
@@ -274,7 +278,7 @@ const ProductCard = ({ product, index, addToCart }) => {
 
             <div className="flex justify-between items-end">
               <div>
-                <p className="text-[10px] text-accent uppercase tracking-widest font-black mb-1">Retail Price</p>
+                <p className="text-[10px] text-accent uppercase tracking-widest font-black mb-1">MRP (Retail Price)</p>
                 <p className="text-4xl md:text-5xl font-heading tracking-tighter">
                   ₹{selectedVariant.price} 
                   <span className="text-xs text-white/30 font-bold uppercase ml-2">/ {selectedVariant.weight}</span>

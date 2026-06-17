@@ -35,6 +35,9 @@ const About = () => {
                 Established as a cooperative to protect and empower local small-scale tea growers, we ensure that every leaf is nurtured with care. We aren't just a factory; we are a community of 500+ farmers dedicated to preserving the "Orthodox" tea-making tradition that is rare to find in today's industrial world.
               </p>
 
+
+
+
               {/* Feature Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[

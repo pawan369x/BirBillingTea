@@ -108,11 +108,11 @@ const Home = () => {
 
             {/* HYBRID TYPOGRAPHY STYLE */}
             <div className="relative">
-              <h1 className="font-heading text-[clamp(3rem,13vw,12rem)] leading-[0.9] uppercase mb-6">
+              <h1 className="font-heading text-[clamp(2.5rem,13vw,12rem)] leading-[1] md:leading-[0.9] uppercase mb-6">
                 <span className="block tracking-tight hover:tracking-normal transition-all duration-1000 cursor-default">
-                  BIR <span className="ml-4 text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">BILLING</span>
+                  BIR <span className="ml-2 md:ml-4 text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.4)]">BILLING</span>
                 </span>
-                <span className="block italic font-light text-accent flex items-center gap-8">
+                <span className="block italic font-light text-accent flex items-center gap-4 md:gap-8">
                   TEA <span className="text-[0.2em] not-italic tracking-[0.5em] text-white/20 hidden md:block">Factory</span>
                 </span>
               </h1>
@@ -134,7 +134,7 @@ const Home = () => {
                   </Link>
                 </MagneticButton>
                 <div className="w-16 h-[1px] bg-white/20 hidden md:block"></div>
-                <Link to="/heritage" className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
+                <Link to="/about" className="text-[10px] uppercase tracking-[4px] font-bold text-white/40 hover:text-accent transition-colors">
                   Our Story
                 </Link>
               </div>
@@ -161,8 +161,8 @@ const Home = () => {
       </div>
 
       {/* 3. THE CRAFT */}
-      <section className="py-40 px-[5vw] relative">
-        <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <section className="py-20 md:py-40 px-[5vw] relative">
+        <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <RevealOnScroll direction="left">
             <div className="relative group">
               <div className="absolute -inset-4 bg-accent/20 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
@@ -170,7 +170,7 @@ const Home = () => {
                 <img
                   src="/assets/bir_factory_main_1773990164233.png"
                   alt="Craft"
-                  className="w-full h-[600px] object-cover transition-transform duration-[2s] group-hover:scale-110"
+                  className="w-full h-[350px] md:h-[600px] object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div className="absolute bottom-10 left-10 flex gap-6">
@@ -265,11 +265,11 @@ const Home = () => {
       </section>
 
       {/* 5. THE PROCESS */}
-      <section className="py-40 px-[5vw] bg-black">
+      <section className="py-20 md:py-40 px-[5vw] bg-black">
         <div className="max-w-[1000px] mx-auto">
-          <div className="text-center mb-32">
+          <div className="text-center mb-20 md:mb-32">
             <span className="text-accent uppercase tracking-[10px] text-xs font-black mb-6 block">Legacy Ritual</span>
-            <h2 className="text-6xl md:text-8xl font-heading leading-none uppercase">From Garden <br /> <span className="italic text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10">To Your Cup.</span></h2>
+            <h2 className="text-4xl md:text-8xl font-heading leading-tight md:leading-none uppercase">From Garden <br /> <span className="italic text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10">To Your Cup.</span></h2>
           </div>
 
           <div className="space-y-40">
@@ -279,13 +279,13 @@ const Home = () => {
               { n: "03", t: "Orthodox Rolling", d: "Slow mechanical rolling releases the essential aromatic oils without damaging the cell structure.", img: "/assets/green_tea_macro.png" }
             ].map((step, i) => (
               <RevealOnScroll key={i} direction="up">
-                <div className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-20 items-center`}>
-                  <div className="flex-1 space-y-8">
-                    <span className="text-8xl font-heading text-accent/10 block">{step.n}</span>
-                    <h4 className="text-4xl font-heading uppercase">{step.t}</h4>
-                    <p className="text-xl text-white/40 leading-relaxed italic font-light">"{step.d}"</p>
+                <div className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-20 items-center`}>
+                  <div className="flex-1 space-y-4 md:space-y-8">
+                    <span className="text-6xl md:text-8xl font-heading text-accent/10 block">{step.n}</span>
+                    <h4 className="text-3xl md:text-4xl font-heading uppercase">{step.t}</h4>
+                    <p className="text-lg md:text-xl text-white/40 leading-relaxed italic font-light">"{step.d}"</p>
                   </div>
-                  <div className="flex-1 w-full rounded-[40px] overflow-hidden h-[400px] border border-white/5">
+                  <div className="flex-1 w-full rounded-[30px] md:rounded-[40px] overflow-hidden h-[250px] md:h-[400px] border border-white/5">
                     <img src={step.img} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" alt={step.t} />
                   </div>
                 </div>
@@ -317,12 +317,12 @@ const Home = () => {
       </section>
 
       {/* 7. TESTIMONIALS - SOCIAL PROOF */}
-      <section className="py-40 bg-white text-black rounded-[80px] relative z-30 -mt-20 overflow-hidden">
+      <section className="py-20 md:py-40 bg-white text-black rounded-[40px] md:rounded-[80px] relative z-30 -mt-10 md:-mt-20 overflow-hidden">
         <div className="px-[5vw]">
-          <div className="text-center mb-24">
+          <div className="text-center mb-16 md:mb-24">
             <RevealOnScroll direction="up">
               <span className="text-accent uppercase tracking-[10px] text-[10px] font-black mb-6 block">Voices of Bir</span>
-              <h2 className="text-6xl md:text-8xl font-heading uppercase leading-none">Loved By <br /> <span className="italic opacity-40">Tea Connoisseurs.</span></h2>
+              <h2 className="text-4xl md:text-8xl font-heading uppercase leading-tight md:leading-none">Loved By <br /> <span className="italic opacity-40">Tea Connoisseurs.</span></h2>
             </RevealOnScroll>
           </div>
         </div>
@@ -333,13 +333,13 @@ const Home = () => {
             {[...testimonials, ...testimonials].map((item, i) => (
               <div 
                 key={i} 
-                className="flex-shrink-0 w-[350px] md:w-[450px] p-10 md:p-12 rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 group flex flex-col justify-between"
+                className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[450px] p-8 md:p-12 rounded-[30px] md:rounded-[50px] bg-[#f8f5f0] border border-black/5 hover:bg-black hover:text-white transition-all duration-700 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex gap-1 mb-8">
-                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-3 h-3 bg-accent rounded-full opacity-60"></div>)}
+                  <div className="flex gap-1 mb-6 md:mb-8">
+                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-2.5 h-2.5 md:w-3 h-3 bg-accent rounded-full opacity-60"></div>)}
                   </div>
-                  <p className="text-xl md:text-2xl font-light italic mb-10 leading-relaxed">"{item.text}"</p>
+                  <p className="text-lg md:text-2xl font-light italic mb-8 md:mb-10 leading-relaxed">"{item.text}"</p>
                 </div>
                 
                 <div className="flex items-center gap-6 border-t border-black/5 group-hover:border-white/10 pt-8 transition-colors">

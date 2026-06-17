@@ -133,13 +133,25 @@ const CartDrawer = ({ isOpen, onClose }) => {
               <div className="p-8 bg-[#0a0a0a] border-t border-white/10 space-y-8">
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[4px] text-white/30 font-bold mb-2">Grand Total</p>
+                    <p className="text-[10px] uppercase tracking-[4px] text-white/30 font-bold mb-2">Grand Total (MRP)</p>
                     <div className="text-5xl font-heading tracking-tighter">₹{cartTotal}</div>
                   </div>
                   <div className="text-right">
                     <p className="text-[10px] uppercase tracking-widest text-[#25D366] font-black">Free Delivery</p>
                     <p className="text-[10px] uppercase tracking-widest text-white/20 font-bold">Standard Shipping</p>
                   </div>
+                </div>
+
+                {/* Bulk Dealer Notice */}
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
+                  <p className="text-[10px] uppercase tracking-wider text-accent font-bold mb-1">Buying Bulk (500kg, 700kg, 1000kg+)?</p>
+                  <p className="text-[9px] text-white/40 mb-2 leading-relaxed">Get direct factory prices. Skip the cart and contact our mobile dealer directly.</p>
+                  <a 
+                    href="tel:+917018666302"
+                    className="text-[9px] uppercase tracking-widest text-[#25D366] hover:underline font-black inline-flex items-center gap-1 justify-center"
+                  >
+                    Call Mobile Dealer
+                  </a>
                 </div>
 
                 <button

@@ -47,8 +47,8 @@ const Footer = () => {
               {[
                 { name: 'Collections', path: '/premium-teas' },
                 { name: 'Our Story', path: '/about' },
-                { name: 'Wholesale', path: '/premium-teas' },
-                { name: 'Factory Tour', path: '/heritage' }
+                { name: 'Bulk Orders', path: '/bulk-orders' },
+                { name: 'Dealer Zone', path: '/bulk-orders' }
               ].map(link => (
                 <li key={link.name}>
                   <Link to={link.path} className="font-heading text-lg hover:text-accent transition-colors flex items-center gap-2 group cursor-pointer w-max">
