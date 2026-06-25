@@ -47,6 +47,7 @@ const Footer = () => {
               {[
                 { name: 'Collections', path: '/premium-teas' },
                 { name: 'Our Story', path: '/about' },
+                { name: 'Our Team', path: '/our-team' },
                 { name: 'Bulk Orders', path: '/bulk-orders' },
                 { name: 'Dealer Zone', path: '/bulk-orders' }
               ].map(link => (

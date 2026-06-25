@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BulkOrders from './pages/BulkOrders';
 import Products from './pages/Products';
 import About from './pages/About';
+import Team from './pages/Team';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="bulk-orders" element={<BulkOrders />} />
             <Route path="premium-teas" element={<Products />} />
             <Route path="about" element={<About />} />
+            <Route path="our-team" element={<Team />} />
           </Route>
         </Routes>
       </BrowserRouter>

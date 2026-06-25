@@ -18,6 +18,7 @@ const Navbar = () => {
     { name: 'Premium Teas', path: '/premium-teas' },
     { name: 'Bulk Orders', path: '/bulk-orders' },
     { name: 'About Us', path: '/about' },
+    { name: 'Our Team', path: '/our-team' },
   ];
 
   useEffect(() => {

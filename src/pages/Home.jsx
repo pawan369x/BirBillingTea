@@ -316,6 +316,103 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 6.5 MEET THE TEAM TEASER */}
+      <section className="py-24 md:py-40 px-[5vw] bg-[#0a0a0a] relative overflow-hidden">
+        {/* Background glow effects */}
+        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div className="max-w-[1300px] mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
+            <RevealOnScroll direction="left">
+              <div className="space-y-4">
+                <span className="text-accent uppercase tracking-[6px] text-xs font-bold block">Human Touch</span>
+                <h2 className="text-5xl md:text-7xl font-heading uppercase leading-tight md:leading-none">
+                  Behind the <br />
+                  <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Himalayan Brew.</span>
+                </h2>
+              </div>
+            </RevealOnScroll>
+            
+            <RevealOnScroll direction="right">
+              <p className="text-white/40 text-lg leading-relaxed max-w-md">
+                Meet the cooperative leaders and master blenders who work hand-in-hand with 500+ local families to keep the orthodox tea heritage alive.
+              </p>
+            </RevealOnScroll>
+          </div>
+
+          {/* Featured Members Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
+            {[
+              {
+                name: "Arpit Soni",
+                role: "CEO & Founder",
+                quote: "We are not just selling tea; we are sharing a century of Himalayan heritage and empowering our local farming communities.",
+                image: "/assets/team_arpit_soni.png",
+                tag: "CEO & Founder"
+              },
+              {
+                name: "Amit Dwibedi",
+                role: "General Manager",
+                quote: "Quality orthodox tea requires a fine balance of temperature, timing, and dedication.",
+                image: "/assets/team_amit_dwibedi.png",
+                tag: "20+ Yrs Experience"
+              }
+            ].map((member, idx) => (
+              <RevealOnScroll key={idx} direction={idx === 0 ? "left" : "right"} delay={idx * 0.15}>
+                <div className="group relative rounded-[2.5rem] bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-accent/40 p-8 md:p-10 transition-all duration-500 hover:shadow-[0_0_50px_rgba(212,175,55,0.08)] hover:-translate-y-2 flex flex-col sm:flex-row gap-8 items-center sm:items-start h-full overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1.2s]"></div>
+                  
+                  {/* Photo container */}
+                  <div className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0 relative bg-white/5 shadow-2xl">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentNode.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-accent/20 text-accent font-heading text-4xl">${member.name.split(' ').map(n=>n[0]).join('')}</div>`;
+                      }}
+                    />
+                  </div>
+
+                  {/* Details */}
+                  <div className="text-center sm:text-left flex flex-col justify-between h-full">
+                    <div>
+                      <span className="text-[9px] tracking-[3px] uppercase font-bold text-accent px-3 py-1 bg-accent/10 rounded-full border border-accent/20">
+                        {member.tag}
+                      </span>
+                      <h3 className="font-heading text-2xl md:text-3xl text-white font-bold mt-4 mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-4">
+                        {member.role}
+                      </p>
+                      <p className="italic text-white/70 text-sm leading-relaxed relative pl-4 before:content-['“'] before:absolute before:left-0 before:top-0 before:text-2xl before:text-accent/30 font-body">
+                        {member.quote}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+
+          {/* CTA to team page */}
+          <div className="flex justify-center">
+            <RevealOnScroll direction="up">
+              <MagneticButton>
+                <Link 
+                  to="/our-team" 
+                  className="px-12 py-6 bg-transparent text-white border border-white/20 hover:border-accent hover:text-accent font-black uppercase text-[10px] tracking-[4px] rounded-full transition-all duration-500 flex items-center gap-4 group"
+                >
+                  Meet the Whole Team <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </MagneticButton>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* 7. TESTIMONIALS - SOCIAL PROOF */}
       <section className="py-20 md:py-40 bg-white text-black rounded-[40px] md:rounded-[80px] relative z-30 -mt-10 md:-mt-20 overflow-hidden">
         <div className="px-[5vw]">
