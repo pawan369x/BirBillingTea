@@ -27,25 +27,60 @@ const Home = () => {
 
   const products = [
     { 
+      title: "Leafy Bliss", 
+      desc: "Our most premium orthodox black tea. Hand-rolled buds offering a delicate floral aroma and a sophisticated, rich palate.", 
+      icon: <Wind size={32} />, 
+      tag: "Ultra Premium",
+      image: "/assets/natural_spark_pack.png"
+    },
+    { 
       title: "Vintage Black", 
-      desc: "A bold, heritage blend of SFTGFOP-1 and BPS. Deep, malty, and profoundly Himalayan.", 
+      desc: "A unique slow-roasted orthodox black tea. Crisp, sharp, and strong ('tikhi chai') with a bold, malty mountain character.", 
       icon: <Coffee size={32} />, 
-      tag: "Bold",
+      tag: "Roasted & Bold",
       image: "/assets/vintage_black_pack.png"
     },
     { 
       title: "Himalayan Green", 
-      desc: "Pure Laccha & Mogra blend. Crisp, refreshing, and packed with high-altitude antioxidants.", 
+      desc: "Classic green tea blended with Laccha and Mogra. Crisp, refreshing, and packed with high-altitude antioxidants.", 
       icon: <Leaf size={32} />, 
-      tag: "Vitality",
+      tag: "Laccha & Mogra",
       image: "/assets/green_tea_pack.png"
     },
     { 
-      title: "Leafy Bliss", 
-      desc: "Our finest Orthodox SFTGFOP-1. Hand-rolled buds with a delicate floral fragrance.", 
-      icon: <Wind size={32} />, 
-      tag: "Premium",
+      title: "Green Bliss", 
+      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.", 
+      icon: <Leaf size={32} />, 
+      tag: "Ultra Premium",
+      image: "/assets/green_tea_macro.png"
+    },
+    { 
+      title: "Natural Spark", 
+      desc: "Robust BPS & TGBOP-1 blend. High-energy brew designed for those who prefer a strong, malty cup.", 
+      icon: <Coffee size={32} />, 
+      tag: "Strong",
       image: "/assets/natural_spark_pack.png"
+    },
+    { 
+      title: "Green Glimmer", 
+      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.", 
+      icon: <Leaf size={32} />, 
+      tag: "Laccha & Mogra",
+      image: "/assets/green_tea_leaves_1773989058831.png"
+    },
+    { 
+      title: "Pahadi Kali Chai", 
+      desc: "Authentic local Kangra blend. The perfect 'Daily Chai' with a rich color and strong, earthy flavor.", 
+      icon: <Coffee size={32} />, 
+      tag: "Daily Choice",
+      image: "/assets/black_tea_macro.png"
+    },
+    { 
+      title: "Green Harmony", 
+      desc: "Delicate Laccha & Mogra notes. A peaceful, balanced brew for mindful moments throughout the day.", 
+      icon: <Leaf size={32} />, 
+      tag: "Balanced",
+      image: "/assets/Green.png"
     }
   ];
 

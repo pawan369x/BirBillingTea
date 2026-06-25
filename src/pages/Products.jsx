@@ -12,16 +12,16 @@ const Products = () => {
   const productData = [
     {
       id: 1,
-      name: "Leafy Bliss Orthodox",
+      name: "Leafy Bliss Orthodox Black Tea",
       category: "Black Tea",
       variants: [
         { weight: "400g", price: 620 },
         { weight: "200g", price: 350 }
       ],
-      desc: "Superior SFTGFOP-1 grade. Hand-rolled buds offering a delicate floral aroma and a sophisticated palate.",
+      desc: "Our most premium orthodox black tea. Hand-rolled buds offering a delicate floral aroma and a sophisticated, rich palate.",
       image: "/assets/black_tea_leaves_1773989075937.png",
-      tag: "Premium",
-      stats: ["Hand-rolled", "Floral", "SFTGFOP-1"],
+      tag: "Ultra Premium",
+      stats: ["Most Premium", "Hand-rolled", "SFTGFOP-1"],
     },
     {
       id: 2,
@@ -30,14 +30,14 @@ const Products = () => {
       variants: [
         { weight: "400g", price: 530 }
       ],
-      desc: "A timeless blend of SFTGFOP-1 and BPS. Balanced, malty, and deep with a signature mountain character.",
+      desc: "A unique slow-roasted orthodox black tea. Crisp, sharp, and strong ('tikhi chai') with a bold, malty mountain character.",
       image: "/assets/vintage_black_pack.png",
-      tag: "Aromatic",
-      stats: ["Balanced", "Deep Amber", "Heritage"],
+      tag: "Roasted & Bold",
+      stats: ["Roasted Black", "Tikhi Chai", "Heritage"],
     },
     {
       id: 3,
-      name: "Natural Spark Orthodox",
+      name: "Natural Spark Orthodox Black Tea",
       category: "Black Tea",
       variants: [
         { weight: "500g", price: 450 },
@@ -50,16 +50,16 @@ const Products = () => {
     },
     {
       id: 4,
-      name: "Green Bliss Tea",
+      name: "Green Bliss Premium Green Tea",
       category: "Green Tea",
       variants: [
         { weight: "400g", price: 520 },
         { weight: "200g", price: 300 }
       ],
-      desc: "Superfine grade green tea. Exceptionally smooth with zero bitterness and maximum antioxidant retention.",
+      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.",
       image: "/assets/green_tea_macro.png",
-      tag: "High Grade",
-      stats: ["Organic", "Superfine", "Pure"],
+      tag: "Ultra Premium",
+      stats: ["Most Premium", "Organic", "Pure"],
     },
     {
       id: 5,
@@ -68,22 +68,22 @@ const Products = () => {
       variants: [
         { weight: "500g", price: 450 }
       ],
-      desc: "Classic Laccha & Mogra blend. Harvested at peak freshness for a crisp, mountain-fresh experience.",
+      desc: "Classic green tea blended with Laccha and Mogra. Crisp, refreshing, and packed with high-altitude antioxidants.",
       image: "/assets/green_tea_pack.png",
-      tag: "Natural",
-      stats: ["Refreshing", "Laccha Mogra", "Zero Bitterness"],
+      tag: "Laccha & Mogra",
+      stats: ["Refreshing", "Laccha & Mogra", "High Altitude"],
     },
     {
       id: 6,
-      name: "Green Glimmer",
+      name: "Green Glimmer Green Tea",
       category: "Green Tea",
       variants: [
         { weight: "500g", price: 430 }
       ],
-      desc: "A unique triple-blend of Laccha, Mogra, and Superfine. A complex and satisfying daily green brew.",
+      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.",
       image: "/assets/green_tea_leaves_1773989058831.png",
-      tag: "Specialty",
-      stats: ["Triple Blend", "Unique", "Smooth"],
+      tag: "Laccha & Mogra",
+      stats: ["Laccha & Mogra", "Refreshing", "Smooth"],
     },
     {
       id: 7,
