@@ -11,6 +11,18 @@ const Products = () => {
 
   const productData = [
     {
+      id: 6,
+      name: "Green Glimmer Green Tea",
+      category: "Green Tea",
+      variants: [
+        { weight: "500g", price: 430 }
+      ],
+      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.",
+      image: "/assets/green_glimmer.png",
+      tag: "Laccha & Mogra & Superfine",
+      stats: ["Laccha & Mogra", "Superfine", "Pack: Apr 2026", "Exp: Mar 2028"],
+    },
+    {
       id: 1,
       name: "Leafy Bliss Orthodox Black Tea",
       category: "Black Tea",
@@ -19,9 +31,59 @@ const Products = () => {
         { weight: "200g", price: 350 }
       ],
       desc: "Our most premium orthodox black tea. Hand-rolled buds offering a delicate floral aroma and a sophisticated, rich palate.",
-      image: "/assets/black_tea_leaves_1773989075937.png",
+      image: "/assets/leafy_bliss.png",
       tag: "Ultra Premium",
-      stats: ["Most Premium", "Hand-rolled", "SFTGFOP-1"],
+      stats: ["SFTGFOP-1", "Pack: Apr 2026", "Exp: Mar 2028"],
+    },
+    {
+      id: 4,
+      name: "Green Bliss Premium Green Tea",
+      category: "Green Tea",
+      variants: [
+        { weight: "400g", price: 520 },
+        { weight: "200g", price: 300 }
+      ],
+      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.",
+      image: "/assets/green_bliss.png",
+      tag: "Superfine",
+      stats: ["Superfine", "Pack: Apr 2026", "Exp: Mar 2028"],
+    },
+    {
+      id: 7,
+      name: "Pahadi Kali Chai (Desi Chai)",
+      category: "Black Tea",
+      variants: [
+        { weight: "500g", price: 350 }
+      ],
+      desc: "Authentic local Kangra blend. The perfect 'Daily Chai' with a rich color and strong, earthy flavor.",
+      image: "/assets/pahadi_kali.png",
+      tag: "Desi Chai",
+      stats: ["Desi Chai", "Pack: Apr 2026", "Exp: Mar 2028"],
+    },
+    {
+      id: 3,
+      name: "Natural Spark Normal Black Tea",
+      category: "Black Tea",
+      variants: [
+        { weight: "500g", price: 450 },
+        { weight: "200g", price: 270 }
+      ],
+      desc: "Robust BPS & TGBOP-1 blend. High-energy brew designed for those who prefer a strong, malty cup.",
+      image: "/assets/natural_spark.png",
+      tag: "Normal Black Tea",
+      stats: ["BPS & TGBOP-1", "Pack: Apr 2026", "Exp: Mar 2028"],
+    },
+    {
+      id: 8,
+      name: "Green Harmony Green Tea",
+      category: "Green Tea",
+      variants: [
+        { weight: "200g", price: 250 }
+      ],
+      desc: "Delicate Laccha & Mogra notes. A peaceful, balanced brew for mindful moments throughout the day.",
+      image: "/assets/green_harmony.png",
+      tag: "Laccha & Mogra",
+      stats: ["Laccha & Mogra", "Pack: Apr 2026", "Exp: Mar 2028"],
     },
     {
       id: 2,
@@ -33,33 +95,7 @@ const Products = () => {
       desc: "A unique slow-roasted orthodox black tea. Crisp, sharp, and strong ('tikhi chai') with a bold, malty mountain character.",
       image: "/assets/vintage_black_pack.png",
       tag: "Roasted & Bold",
-      stats: ["Roasted Black", "Tikhi Chai", "Heritage"],
-    },
-    {
-      id: 3,
-      name: "Natural Spark Orthodox Black Tea",
-      category: "Black Tea",
-      variants: [
-        { weight: "500g", price: 450 },
-        { weight: "200g", price: 270 }
-      ],
-      desc: "Robust BPS & TGBOP-1 blend. High-energy brew designed for those who prefer a strong, malty cup.",
-      image: "/assets/natural_spark_pack.png",
-      tag: "Strong",
-      stats: ["Energizing", "Robust", "Full-bodied"],
-    },
-    {
-      id: 4,
-      name: "Green Bliss Premium Green Tea",
-      category: "Green Tea",
-      variants: [
-        { weight: "400g", price: 520 },
-        { weight: "200g", price: 300 }
-      ],
-      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.",
-      image: "/assets/green_tea_macro.png",
-      tag: "Ultra Premium",
-      stats: ["Most Premium", "Organic", "Pure"],
+      stats: ["Roasted Black", "Pack: Apr 2026", "Exp: Mar 2028"],
     },
     {
       id: 5,
@@ -71,43 +107,7 @@ const Products = () => {
       desc: "Classic green tea blended with Laccha and Mogra. Crisp, refreshing, and packed with high-altitude antioxidants.",
       image: "/assets/green_tea_pack.png",
       tag: "Laccha & Mogra",
-      stats: ["Refreshing", "Laccha & Mogra", "High Altitude"],
-    },
-    {
-      id: 6,
-      name: "Green Glimmer Green Tea",
-      category: "Green Tea",
-      variants: [
-        { weight: "500g", price: 430 }
-      ],
-      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.",
-      image: "/assets/green_tea_leaves_1773989058831.png",
-      tag: "Laccha & Mogra",
-      stats: ["Laccha & Mogra", "Refreshing", "Smooth"],
-    },
-    {
-      id: 7,
-      name: "Pahadi Kali Chai",
-      category: "Black Tea",
-      variants: [
-        { weight: "500g", price: 350 }
-      ],
-      desc: "Authentic local Kangra blend. The perfect 'Daily Chai' with a rich color and strong, earthy flavor.",
-      image: "/assets/black_tea_macro.png",
-      tag: "Daily Choice",
-      stats: ["Kangra Special", "Strong", "Local Blend"],
-    },
-    {
-      id: 8,
-      name: "Green Harmony",
-      category: "Green Tea",
-      variants: [
-        { weight: "200g", price: 250 }
-      ],
-      desc: "Delicate Laccha & Mogra notes. A peaceful, balanced brew for mindful moments throughout the day.",
-      image: "/assets/Green.png",
-      tag: "Balanced",
-      stats: ["Mellow", "Calming", "Fresh"],
+      stats: ["Refreshing", "Pack: Apr 2026", "Exp: Mar 2028"],
     }
   ];
 
@@ -118,13 +118,8 @@ const Products = () => {
     return productData.filter(p => p.category === activeCategory);
   }, [activeCategory]);
 
-  const handleBulkInquiry = (qty = "") => {
-    const phoneNumber = "917018666302";
-    const qtyText = qty ? ` (${qty})` : "";
-    const text = `Hello Bir Billing Tea Factory!\n\nI am interested in bulk wholesale supply${qtyText} for your tea products. Please connect me with the mobile dealer for pricing and quotes.\n\nThank you!`;
-    const encodedText = encodeURIComponent(text);
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
-    window.open(waUrl, '_blank');
+  const handleBulkInquiry = () => {
+    window.location.href = "tel:+917018666302";
   };
 
   return (
@@ -198,10 +193,10 @@ const Products = () => {
               </MagneticButton>
               <MagneticButton>
                 <button 
-                  onClick={() => handleBulkInquiry("500kg / 700kg / 1000kg+")}
+                  onClick={() => handleBulkInquiry()}
                   className="px-12 py-6 inline-flex items-center justify-center whitespace-nowrap bg-black text-white rounded-full font-black uppercase text-[10px] md:text-xs tracking-[5px] hover:bg-accent hover:text-black transition-all"
                 >
-                  WhatsApp Dealer
+                  Direct Call
                 </button>
               </MagneticButton>
             </div>

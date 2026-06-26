@@ -9,6 +9,25 @@ import {
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [activeProcess, setActiveProcess] = useState('Green');
+
+  const greenSteps = [
+    { n: "01", t: "Plucking & Arrival", d: "Fresh whole tea leaves are hand-picked from the mountain gardens and brought directly to our factory.", img: "/assets/tea_garden_cinematic.png" },
+    { n: "02", t: "Steaming (Steamer)", d: "Fresh leaves go directly into the Steamer machine. Steaming halts oxidation instantly, preserving the vibrant green color, high-altitude nutrients, and fresh taste.", img: "/assets/steamer_machine.jpg" },
+    { n: "03", t: "Orthodox Rolling (Roller)", d: "Steamed leaves are rolled in the Roller machine to shape the leaf mass and press out excess moisture/liquids, leaving behind the rich, textured leaf mass.", img: "/assets/roller_machine.jpg" },
+    { n: "04", t: "Controlled Drying (Dryer)", d: "The rolled leaves are sent to the Dryer machine, drying them evenly to reduce moisture completely and lock in the fresh flavor profile.", img: "/assets/dryer_machine.jpg" },
+    { n: "05", t: "Sorting & Grading (Sorter)", d: "Finally, the dried tea is cleaned and sorted by leaf size in the Sorting machine. This ensures a 100% pure organic green tea with no artificial additives or unwanted impurities.", img: "/assets/sorting_machine.jpg" }
+  ];
+
+  const blackSteps = [
+    { n: "01", t: "Plucking & Arrival", d: "Fresh whole leaves are harvested early in the morning from the Kangra valley tea gardens.", img: "/assets/tea_garden_cinematic.png" },
+    { n: "02", t: "Withering (Traditional Troughs)", d: "Unlike green tea, fresh leaves are laid in traditional troughs overnight. Large fans blow air to wither and dry them naturally until morning, initiating the black tea character.", img: "/assets/bir_factory_main_1773990164233.png" },
+    { n: "03", t: "Orthodox Rolling (Roller)", d: "Withered leaves are processed in the Roller machine to initiate the enzymatic oxidation and shape the orthodox whole leaves.", img: "/assets/roller_machine.jpg" },
+    { n: "04", t: "Drying & Temperature Control", d: "The rolled leaves are dried in the Dryer. The signature rich malty taste and color are crafted precisely by adjusting the dryer temperature.", img: "/assets/dryer_machine.jpg" },
+    { n: "05", t: "Sorting & Grading (Sorter)", d: "The dried black tea is graded (e.g., premium SFTGFOP-1, BPS) and cleaned in the Sorting machine to package 100% pure organic orthodox black tea.", img: "/assets/sorting_machine.jpg" }
+  ];
+
+  const currentSteps = activeProcess === 'Green' ? greenSteps : blackSteps;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +46,46 @@ const Home = () => {
 
   const products = [
     { 
+      title: "Green Glimmer", 
+      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.", 
+      icon: <Leaf size={32} />, 
+      tag: "Laccha & Mogra & Superfine",
+      image: "/assets/green_glimmer.png"
+    },
+    { 
       title: "Leafy Bliss", 
       desc: "Our most premium orthodox black tea. Hand-rolled buds offering a delicate floral aroma and a sophisticated, rich palate.", 
       icon: <Wind size={32} />, 
       tag: "Ultra Premium",
-      image: "/assets/natural_spark_pack.png"
+      image: "/assets/leafy_bliss.png"
+    },
+    { 
+      title: "Green Bliss", 
+      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.", 
+      icon: <Leaf size={32} />, 
+      tag: "Superfine",
+      image: "/assets/green_bliss.png"
+    },
+    { 
+      title: "Pahadi Kali Chai", 
+      desc: "Authentic local Kangra blend. The perfect 'Daily Chai' with a rich color and strong, earthy flavor.", 
+      icon: <Coffee size={32} />, 
+      tag: "Desi Chai",
+      image: "/assets/pahadi_kali.png"
+    },
+    { 
+      title: "Natural Spark", 
+      desc: "Robust BPS & TGBOP-1 blend. High-energy brew designed for those who prefer a strong, malty cup.", 
+      icon: <Coffee size={32} />, 
+      tag: "Normal Black Tea",
+      image: "/assets/natural_spark.png"
+    },
+    { 
+      title: "Green Harmony Green Tea", 
+      desc: "Delicate Laccha & Mogra notes. A peaceful, balanced brew for mindful moments throughout the day.", 
+      icon: <Leaf size={32} />, 
+      tag: "Laccha & Mogra",
+      image: "/assets/green_harmony.png"
     },
     { 
       title: "Vintage Black", 
@@ -46,41 +100,6 @@ const Home = () => {
       icon: <Leaf size={32} />, 
       tag: "Laccha & Mogra",
       image: "/assets/green_tea_pack.png"
-    },
-    { 
-      title: "Green Bliss", 
-      desc: "Our most premium green tea. Harvested from the youngest buds for an exceptionally smooth, fresh taste with zero bitterness.", 
-      icon: <Leaf size={32} />, 
-      tag: "Ultra Premium",
-      image: "/assets/green_tea_macro.png"
-    },
-    { 
-      title: "Natural Spark", 
-      desc: "Robust BPS & TGBOP-1 blend. High-energy brew designed for those who prefer a strong, malty cup.", 
-      icon: <Coffee size={32} />, 
-      tag: "Strong",
-      image: "/assets/natural_spark_pack.png"
-    },
-    { 
-      title: "Green Glimmer", 
-      desc: "A unique blend of Laccha and Mogra. A smooth, satisfying green tea for everyday energy.", 
-      icon: <Leaf size={32} />, 
-      tag: "Laccha & Mogra",
-      image: "/assets/green_tea_leaves_1773989058831.png"
-    },
-    { 
-      title: "Pahadi Kali Chai", 
-      desc: "Authentic local Kangra blend. The perfect 'Daily Chai' with a rich color and strong, earthy flavor.", 
-      icon: <Coffee size={32} />, 
-      tag: "Daily Choice",
-      image: "/assets/black_tea_macro.png"
-    },
-    { 
-      title: "Green Harmony", 
-      desc: "Delicate Laccha & Mogra notes. A peaceful, balanced brew for mindful moments throughout the day.", 
-      icon: <Leaf size={32} />, 
-      tag: "Balanced",
-      image: "/assets/Green.png"
     }
   ];
 
@@ -302,25 +321,47 @@ const Home = () => {
       {/* 5. THE PROCESS */}
       <section className="py-20 md:py-40 px-[5vw] bg-black">
         <div className="max-w-[1000px] mx-auto">
-          <div className="text-center mb-20 md:mb-32">
+          <div className="text-center mb-12">
             <span className="text-accent uppercase tracking-[10px] text-xs font-black mb-6 block">Legacy Ritual</span>
             <h2 className="text-4xl md:text-8xl font-heading leading-tight md:leading-none uppercase">From Garden <br /> <span className="italic text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10">To Your Cup.</span></h2>
           </div>
 
+          {/* Process Selection Tabs */}
+          <div className="flex justify-center mb-24">
+            <div className="flex bg-white/5 border border-white/10 rounded-full p-1 backdrop-blur-md">
+              <button
+                onClick={() => setActiveProcess('Green')}
+                className={`px-8 py-3.5 rounded-full text-[10px] uppercase tracking-widest font-black transition-all duration-500 cursor-pointer ${
+                  activeProcess === 'Green' 
+                    ? 'bg-accent text-black shadow-lg font-bold' 
+                    : 'text-white/40 hover:text-white'
+                }`}
+              >
+                Green Tea Process
+              </button>
+              <button
+                onClick={() => setActiveProcess('Black')}
+                className={`px-8 py-3.5 rounded-full text-[10px] uppercase tracking-widest font-black transition-all duration-500 cursor-pointer ${
+                  activeProcess === 'Black' 
+                    ? 'bg-accent text-black shadow-lg font-bold' 
+                    : 'text-white/40 hover:text-white'
+                }`}
+              >
+                Black Tea Process
+              </button>
+            </div>
+          </div>
+
           <div className="space-y-40">
-            {[
-              { n: "01", t: "Plucking", d: "At precisely 5:30 AM, our farmers select the 'two leaves and a bud' from the dew-covered gardens.", img: "/assets/tea_garden_cinematic.png" },
-              { n: "02", t: "Withering", d: "Leaves are rested on traditional troughs to reduce moisture naturally by 50%.", img: "/assets/bir_factory_main_1773990164233.png" },
-              { n: "03", t: "Orthodox Rolling", d: "Slow mechanical rolling releases the essential aromatic oils without damaging the cell structure.", img: "/assets/green_tea_macro.png" }
-            ].map((step, i) => (
-              <RevealOnScroll key={i} direction="up">
+            {currentSteps.map((step, i) => (
+              <RevealOnScroll key={`${activeProcess}-${i}`} direction="up">
                 <div className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-20 items-center`}>
                   <div className="flex-1 space-y-4 md:space-y-8">
                     <span className="text-6xl md:text-8xl font-heading text-accent/10 block">{step.n}</span>
                     <h4 className="text-3xl md:text-4xl font-heading uppercase">{step.t}</h4>
                     <p className="text-lg md:text-xl text-white/40 leading-relaxed italic font-light">"{step.d}"</p>
                   </div>
-                  <div className="flex-1 w-full rounded-[30px] md:rounded-[40px] overflow-hidden h-[250px] md:h-[400px] border border-white/5">
+                  <div className="flex-1 w-full rounded-[30px] md:rounded-[40px] overflow-hidden h-[250px] md:h-[400px] border border-white/5 bg-white/5">
                     <img src={step.img} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" alt={step.t} />
                   </div>
                 </div>
@@ -589,7 +630,7 @@ const faqs = [
   },
   {
     q: "Wholesale & Custom Curation?",
-    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via WhatsApp (+91 70186 66302) or Email (birbillingtea@gmail.com).",
+    a: "We partner with Michelin-star restaurants and luxury boutiques. For bulk inquiries or bespoke blend curation, our factory concierge is available via Call (+91 70186 66302) or Email (birbillingtea@gmail.com).",
     tag: "Business"
   },
   {

@@ -17,19 +17,18 @@ const BulkOrders = () => {
   }, []);
 
   const teaOptions = [
-    'Orthodox Black Tea',
-    'Green Tea (Laccha & Mogra)',
-    'Green Bliss Tea (Superfine)',
+    'Leafy Bliss Orthodox Black Tea',
+    'Green Bliss Premium Green Tea (Superfine)',
     'Vintage Black Tea',
-    'Natural Spark Orthodox'
+    'Natural Spark Normal Black Tea (BPS & TGBOP-1)',
+    'Pahadi Kali Chai (Desi Chai)',
+    'Green Glimmer Green Tea (Laccha & Mogra & Superfine)',
+    'Green Harmony Green Tea (Laccha & Mogra)',
+    'Himalayan Green Tea'
   ];
 
-  const handleWhatsAppInquiry = (qty = selectedQty, tea = selectedTea) => {
-    const phoneNumber = "917018666302";
-    const text = `Hello Bir Billing Tea Factory Dealer!\n\nI am interested in a bulk dealership order of:\n*Tea Type:* ${tea}\n*Quantity:* ${qty} KG\n\nPlease send us the current wholesale pricing and shipping details.\n\nThank you!`;
-    const encodedText = encodeURIComponent(text);
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
-    window.open(waUrl, '_blank');
+  const handleWhatsAppInquiry = () => {
+    window.location.href = "tel:+917018666302";
   };
 
   // Calculate pricing tier details dynamically
@@ -92,23 +91,23 @@ const BulkOrders = () => {
       <section className="px-[5vw] mb-24 md:mb-40">
         <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           
-          {/* Card 1: WhatsApp Dealer */}
+          {/* Card 1: Call Mobile Dealer */}
           <RevealOnScroll direction="left">
-            <div className="group relative rounded-[40px] bg-[#0c0c0c] border border-white/5 p-10 md:p-12 hover:border-[#25D366]/30 hover:shadow-[0_20px_50px_rgba(37,211,102,0.05)] transition-all duration-700 h-full flex flex-col justify-between overflow-hidden">
-              <div className="absolute top-[-10%] right-[-10%] w-40 h-40 bg-[#25D366]/10 blur-[50px] rounded-full group-hover:bg-[#25D366]/20 transition-all duration-75" />
+            <div className="group relative rounded-[40px] bg-[#0c0c0c] border border-white/5 p-10 md:p-12 hover:border-accent/30 hover:shadow-[0_20px_50px_rgba(212,175,55,0.05)] transition-all duration-700 h-full flex flex-col justify-between overflow-hidden">
+              <div className="absolute top-[-10%] right-[-10%] w-40 h-40 bg-accent/10 blur-[50px] rounded-full group-hover:bg-accent/20 transition-all duration-75" />
               <div>
-                <span className="text-[#25D366] text-sm uppercase tracking-widest font-black mb-4 block">INSTANT CHAT</span>
-                <h3 className="font-heading text-4xl uppercase mb-6">WhatsApp Dealer</h3>
+                <span className="text-accent text-sm uppercase tracking-widest font-black mb-4 block">DIRECT DEALER LINE</span>
+                <h3 className="font-heading text-4xl uppercase mb-6">Call Dealer Directly</h3>
                 <p className="text-white/40 leading-relaxed mb-10">
-                  Send your requirements directly to the dealer on WhatsApp. Get instant responses regarding stock status, leaf grade details, and custom logistics coordination.
+                  Speak directly with our factory manager. Discuss customized pricing structures, volume packaging, freight logistics, and distribution contracts with no middleman.
                 </p>
               </div>
               <MagneticButton>
                 <button 
                   onClick={() => handleWhatsAppInquiry()}
-                  className="w-full py-6 rounded-2xl bg-[#25D366] text-black font-black uppercase text-xs tracking-[4px] hover:bg-white transition-all flex items-center justify-center gap-3"
+                  className="w-full py-6 rounded-2xl bg-accent text-black font-black uppercase text-xs tracking-[4px] hover:bg-white transition-all flex items-center justify-center gap-3"
                 >
-                  <MessageCircle size={18} className="fill-black" /> Chat with Dealer
+                  <Phone size={18} className="fill-black" /> Click to Call Dealer
                 </button>
               </MagneticButton>
             </div>
@@ -240,10 +239,10 @@ const BulkOrders = () => {
 
               {/* Action */}
               <button 
-                onClick={() => handleWhatsAppInquiry(selectedQty, selectedTea)}
+                onClick={() => handleWhatsAppInquiry()}
                 className="w-full py-6 rounded-2xl bg-white text-black font-black uppercase text-xs tracking-[4px] hover:bg-accent transition-all flex items-center justify-center gap-3"
               >
-                Inquire This Tier <ArrowRight size={16} />
+                Call to Inquire <Phone size={16} />
               </button>
             </div>
 
