@@ -222,7 +222,7 @@ const Home = () => {
               <div className="absolute -inset-4 bg-accent/20 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               <div className="relative rounded-[40px] overflow-hidden border border-white/10">
                 <img
-                  src="/assets/bir_factory_main_1773990164233.png"
+                  src="/assets/tea_leaves_slate.jpg"
                   alt="Craft"
                   className="w-full h-[350px] md:h-[600px] object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
